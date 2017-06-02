@@ -1,1 +1,1 @@
-include ':app', ':rxdemo'
+include ':hotupdate', ':rxdemo'
