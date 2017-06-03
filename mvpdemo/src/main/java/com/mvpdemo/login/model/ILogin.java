@@ -1,4 +1,4 @@
-package com.mvpdemo.login.model.Interface;
+package com.mvpdemo.login.model;
 
 /**
  * Created by Administrator on 2017/6/2.

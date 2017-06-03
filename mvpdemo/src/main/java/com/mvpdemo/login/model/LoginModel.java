@@ -1,6 +1,4 @@
-package com.mvpdemo.login.model.Impl;
-
-import com.mvpdemo.login.model.Interface.ILogin;
+package com.mvpdemo.login.model;
 
 /**
  * Created by Administrator on 2017/6/2.

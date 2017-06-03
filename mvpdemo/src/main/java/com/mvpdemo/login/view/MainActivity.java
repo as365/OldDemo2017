@@ -2,21 +2,21 @@ package com.mvpdemo.login.view;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.mvpdemo.R;
-import com.mvpdemo.login.presenter.Impl.LoginPresenter;
-import com.mvpdemo.login.presenter.Interface.IPresenter;
-import com.mvpdemo.login.view.Interface.IMainView;
+import com.mvpdemo.login.presenter.LoginPresenter;
+import com.mvpdemo.login.presenter.IPresenter;
 
 public class MainActivity extends AppCompatActivity implements IMainView {
     private EditText edName;
     private EditText edPwd;
     private Button button;
     private IPresenter iPresenter;
+    private TextView tv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements IMainView {
         edName = (EditText) findViewById(R.id.name);
         edPwd = (EditText) findViewById(R.id.pwd);
         button = (Button) findViewById(R.id.button);
+        tv = (TextView) findViewById(R.id.tv);
         iPresenter = new LoginPresenter(this);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,12 +45,7 @@ public class MainActivity extends AppCompatActivity implements IMainView {
     }
 
     @Override
-    public void showSuccessMessage() {
-        Log.i("TAG", "showSuccessMessage: 啦啦啦");
-    }
-
-    @Override
-    public void showFailMessage() {
-        Log.i("TAG", "showFailMessage: 呜呜呜");
+    public void setResult(String result) {
+        tv.setText(result);
     }
 }

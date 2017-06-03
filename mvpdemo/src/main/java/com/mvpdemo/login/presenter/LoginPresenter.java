@@ -1,11 +1,8 @@
-package com.mvpdemo.login.presenter.Impl;
+package com.mvpdemo.login.presenter;
 
-import android.util.Log;
-
-import com.mvpdemo.login.model.Impl.LoginModel;
-import com.mvpdemo.login.model.Interface.ILogin;
-import com.mvpdemo.login.presenter.Interface.IPresenter;
-import com.mvpdemo.login.view.Interface.IMainView;
+import com.mvpdemo.login.model.LoginModel;
+import com.mvpdemo.login.model.ILogin;
+import com.mvpdemo.login.view.IMainView;
 
 /**
  * Created by Administrator on 2017/6/2.
@@ -25,12 +22,12 @@ public class LoginPresenter implements IPresenter {
         iLogin.checkRight(iMainView.getUserName(), iMainView.getUserPwd(), new ILogin.CallBack() {
             @Override
             public void onSuccess() {
-                Log.i("TAG", "CALL onSuccess: ");
+                iMainView.setResult("登录成功!");
             }
 
             @Override
             public void onFail() {
-                Log.i("TAG", "CALL onFail: ");
+                iMainView.setResult("登录失败!");
             }
         });
     }

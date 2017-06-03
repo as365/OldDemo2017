@@ -1,4 +1,4 @@
-package com.mvpdemo.login.presenter.Interface;
+package com.mvpdemo.login.presenter;
 
 /**
  * Created by Administrator on 2017/6/2.
