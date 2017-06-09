@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/libzxing/libzxing.iml" filepath="$PROJECT_DIR$/libzxing/libzxing.iml" />
       <module fileurl="file://$PROJECT_DIR$/mvpdemo/mvpdemo.iml" filepath="$PROJECT_DIR$/mvpdemo/mvpdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/quickcode/quickcode.iml" filepath="$PROJECT_DIR$/quickcode/quickcode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/quickcode/quickcode.iml" filepath="$PROJECT_DIR$/quickcode/quickcode.iml" />
       <module fileurl="file://$PROJECT_DIR$/rxdemo/rxdemo.iml" filepath="$PROJECT_DIR$/rxdemo/rxdemo.iml" />
     </modules>
   </component>
