@@ -1,1 +1,1 @@
-include ':hotupdate', ':rxdemo', ':mvpdemo'
+include ':hotupdate', ':rxdemo', ':mvpdemo', ':quickcode', ':libzxing'
