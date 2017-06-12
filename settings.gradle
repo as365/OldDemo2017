@@ -1,1 +1,1 @@
-include ':hotupdate', ':rxdemo', ':mvpdemo', ':quickcode'
+include ':hotupdate', ':rxdemo', ':mvpdemo', ':quickcode', ':okhttpdemo'
