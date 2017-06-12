@@ -1,5 +1,6 @@
 package com.okhttpdemo;
 
+import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.RequestBody;
@@ -65,5 +66,10 @@ public class OkUtils {
             return body.string();
         }
         return null;
+    }
+
+    public static void loadDataByNewThread(String url, Callback callback){
+        Request request = getRequestFromUrl(url);
+        client.newCall(request).enqueue(callback);
     }
 }
