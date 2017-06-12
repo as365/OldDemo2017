@@ -1,5 +1,7 @@
 package com.okhttpdemo;
 
+import android.util.Log;
+
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
@@ -68,8 +70,15 @@ public class OkUtils {
         return null;
     }
 
+    /**
+     * 隐式开启线程
+     * @param url
+     * @param callback
+     */
     public static void loadDataByNewThread(String url, Callback callback){
+        Log.i("TAG", "ThreadName: "+Thread.currentThread().getName());
         Request request = getRequestFromUrl(url);
         client.newCall(request).enqueue(callback);
+        Log.i("TAG", "ThreadName: "+Thread.currentThread().getName());
     }
 }

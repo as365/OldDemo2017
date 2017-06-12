@@ -4,6 +4,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.squareup.okhttp.Callback;
@@ -19,24 +20,28 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, msg.obj.toString(), Toast.LENGTH_LONG).show();
         }
     };
+    private Message m = Message.obtain();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        loadNetworkData();
-        //loadNetworkDataByNewThread();
+        //loadNetworkData();
+        loadNetworkDataByNewThread();
     }
 
     private void loadNetworkDataByNewThread() {
         OkUtils.loadDataByNewThread(Constants.URL, new Callback() {
             @Override
             public void onFailure(Request request, IOException e) {
-                Toast.makeText(MainActivity.this, "分享失败", Toast.LENGTH_LONG).show();
+                m.obj = "请求网络失败";
+                handler.sendMessage(m);
             }
 
             @Override
             public void onResponse(Response response) throws IOException {
-                Toast.makeText(MainActivity.this, "s= "+response.body().string(), Toast.LENGTH_LONG).show();
+                Log.i("TAG", "onResponse: "+Thread.currentThread().getName());
+                m.obj = response.body().string();
+                handler.sendMessage(m);
             }
         });
     }
@@ -50,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
                     if(s==null){
 
                     }else {
-                        Message m = Message.obtain();
                         m.obj = s;
                         handler.sendMessage(m);
                     }
