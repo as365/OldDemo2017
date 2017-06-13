@@ -1,0 +1,57 @@
+package com.okhttpdemo;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+import com.google.gson.Gson;
+import com.okhttpdemo.NetworkUtils.OkUtils;
+import com.squareup.okhttp.Callback;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.Response;
+
+import org.greenrobot.eventbus.EventBus;
+
+import java.io.IOException;
+
+public class Main2Activity extends AppCompatActivity {
+    private Button bAll;
+    private Button bOne;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main2);
+        bAll = (Button) findViewById(R.id.sendAll);
+        bOne = (Button) findViewById(R.id.sendOne);
+        bAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadNetworkDataByNewThread();
+            }
+        });
+        bOne.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EventBus.getDefault().post("发送指定!");
+            }
+        });
+    }
+
+    private void loadNetworkDataByNewThread() {
+        OkUtils.GET_NETWORK(Constants.RECENT_MOVIE_URL, new Callback() {
+            @Override
+            public void onFailure(Request request, IOException e) {
+                EventBus.getDefault().post("失败");
+            }
+
+            @Override
+            public void onResponse(Response response) throws IOException {
+                String string = response.body().string();
+                Gson gson = new Gson();
+                MovieBean bean = gson.fromJson(string, MovieBean.class);
+                EventBus.getDefault().post(bean.getTitle());
+            }
+        });
+    }
+}

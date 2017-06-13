@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/quickcode" />
             <option value="$PROJECT_DIR$/retrofitdemo" />
             <option value="$PROJECT_DIR$/rxdemo" />
+            <option value="$PROJECT_DIR$/viewpagerdemo" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
