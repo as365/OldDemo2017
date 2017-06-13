@@ -11,6 +11,9 @@ import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
@@ -39,9 +42,16 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onResponse(Response response) throws IOException {
-                Log.i("TAG", "onResponse: "+Thread.currentThread().getName());
-                m.obj = response.body().string();
-                handler.sendMessage(m);
+                String string = response.body().string();
+                try {
+                    JSONObject object = new JSONObject(string);
+                    Log.i("TAG", "onResponse: "+object);
+                    m.obj = response.body().string();
+                    handler.sendMessage(m);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
             }
         });
     }
