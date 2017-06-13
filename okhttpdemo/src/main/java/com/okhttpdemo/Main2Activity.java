@@ -61,10 +61,13 @@ public class Main2Activity extends AppCompatActivity {
 
     @Subscribe(threadMode = ThreadMode.POSTING)
     public void hello1(String s){
-        Log.i("TAG", "hello1: POSTING");
+        Log.i("TAG", "hello1: POSTING2"+Thread.currentThread().getName());
         finish();
     }
-
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void hello(String s){
+        Log.i("TAG", "hello: MAIN2"+Thread.currentThread().getName());
+    }
     @Override
     protected void onDestroy() {
         super.onDestroy();

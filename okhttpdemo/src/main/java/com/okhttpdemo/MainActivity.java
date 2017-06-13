@@ -43,8 +43,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void hello(String s){
-        Log.i("TAG", "hello: MAIN");
+        Log.i("TAG", "hello: MAIN1"+Thread.currentThread().getName());
         textView.setText(s);
+    }
+    @Subscribe(threadMode = ThreadMode.POSTING)
+    public void hello1(String s){
+        Log.i("TAG", "hello1: POSTING1"+Thread.currentThread().getName());
     }
     @Override
     protected void onDestroy() {
