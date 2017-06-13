@@ -4,16 +4,13 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Toast;
 
+
+import com.google.gson.Gson;
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
@@ -33,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void loadNetworkDataByNewThread() {
-        OkUtils.loadDataByNewThread(Constants.URL, new Callback() {
+        OkUtils.loadDataByNewThread(Constants.BASE_URL+Constants.MOVIE_URL, new Callback() {
             @Override
             public void onFailure(Request request, IOException e) {
                 m.obj = "请求网络失败";
@@ -43,15 +40,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Response response) throws IOException {
                 String string = response.body().string();
-                try {
-                    JSONObject object = new JSONObject(string);
-                    Log.i("TAG", "onResponse: "+object);
-                    m.obj = response.body().string();
-                    handler.sendMessage(m);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
+                Gson gson = new Gson();
+                MovieBean bean = gson.fromJson(string, MovieBean.class);
+                m.obj = bean.getSubjects().get(0).getTitle();
+                handler.sendMessage(m);
             }
         });
     }
@@ -61,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 try {
-                    String s = OkUtils.loadStringFromUrl(Constants.URL);
+                    String s = OkUtils.loadStringFromUrl(Constants.BASE_URL+Constants.MOVIE_URL);
                     if(s==null){
 
                     }else {
