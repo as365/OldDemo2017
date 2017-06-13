@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 
 import com.google.gson.Gson;
+import com.okhttpdemo.NetworkUtils.OkUtils;
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
@@ -25,12 +26,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //loadNetworkData();
         loadNetworkDataByNewThread();
     }
 
     private void loadNetworkDataByNewThread() {
-        OkUtils.loadDataByNewThread(Constants.BASE_URL+Constants.MOVIE_URL, new Callback() {
+        OkUtils.loadDataByNewThread(Constants.RECENT_MOVIE_URL, new Callback() {
             @Override
             public void onFailure(Request request, IOException e) {
                 m.obj = "请求网络失败";
@@ -46,24 +46,5 @@ public class MainActivity extends AppCompatActivity {
                 handler.sendMessage(m);
             }
         });
-    }
-
-    private void loadNetworkData() {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    String s = OkUtils.loadStringFromUrl(Constants.BASE_URL+Constants.MOVIE_URL);
-                    if(s==null){
-
-                    }else {
-                        m.obj = s;
-                        handler.sendMessage(m);
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }).start();
     }
 }

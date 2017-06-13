@@ -1,4 +1,4 @@
-package com.okhttpdemo;
+package com.okhttpdemo.NetworkUtils;
 
 import android.util.Log;
 
@@ -75,7 +75,7 @@ public class OkUtils {
      * @param url
      * @param callback
      */
-    public static void loadDataByNewThread(String url, Callback callback){
+    public static void GET_NETWORK(String url, Callback callback){
         Log.i("TAG", "ThreadName: "+Thread.currentThread().getName());
         Request request = getRequestFromUrl(url);
         client.newCall(request).enqueue(callback);

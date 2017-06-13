@@ -8,5 +8,6 @@ public interface Constants {
 
     //基本地址
     String BASE_URL = "https://api.douban.com";
-    String MOVIE_URL = "/v2/movie/in_theaters";
+    //热映电影
+    String RECENT_MOVIE_URL = BASE_URL+"/v2/movie/in_theaters";
 }
