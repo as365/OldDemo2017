@@ -1,31 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.okhttpdemo.Main2Activity">
-   <Button
-    android:id="@+id/sendAll"
-    android:text="发送全部"
-    android:layout_width="100dp"
-    android:layout_height="50dp"
-       android:layout_marginRight="8dp"
-       app:layout_constraintRight_toRightOf="parent"
-       android:layout_marginLeft="8dp"
-       app:layout_constraintLeft_toLeftOf="parent"
-       app:layout_constraintTop_toTopOf="parent"
-       android:layout_marginTop="8dp"
-       app:layout_constraintHorizontal_bias="0.501" />
+    android:layout_height="match_parent" >
+
     <Button
-        android:id="@+id/sendOne"
-        android:text="发送指定"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/sendAll"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent" />
-</android.support.constraint.ConstraintLayout>
+        android:id="@+id/post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Post"/>
+
+    <Button
+        android:id="@+id/regist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Regist"/>
+
+    <Button
+        android:id="@+id/unregist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="UnRegist"/>
+
+</LinearLayout>

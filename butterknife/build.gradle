@@ -5,7 +5,7 @@ android {
     buildToolsVersion "25.0.2"
 
     defaultConfig {
-        applicationId "com.viewpagerdemo"
+        applicationId "com.bk"
         minSdkVersion 15
         targetSdkVersion 25
         versionCode 1
@@ -21,7 +21,7 @@ android {
         }
     }
 }
-
+apply plugin: 'com.neenbedankt.android-apt' //添加这行
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -30,4 +30,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.1'
     testCompile 'junit:junit:4.12'
+    compile 'com.jakewharton:butterknife:8.4.0'//添加这行
+    apt 'com.jakewharton:butterknife-compiler:8.4.0'//添加这行
 }

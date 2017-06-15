@@ -8,13 +8,13 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/butterknife" />
             <option value="$PROJECT_DIR$/hotupdate" />
             <option value="$PROJECT_DIR$/mvpdemo" />
             <option value="$PROJECT_DIR$/okhttpdemo" />
             <option value="$PROJECT_DIR$/quickcode" />
             <option value="$PROJECT_DIR$/retrofitdemo" />
             <option value="$PROJECT_DIR$/rxdemo" />
-            <option value="$PROJECT_DIR$/viewpagerdemo" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

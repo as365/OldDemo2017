@@ -1,5 +1,4 @@
 package com.okhttpdemo;
-
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,23 +6,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
-
-import com.google.gson.Gson;
-import com.okhttpdemo.NetworkUtils.OkUtils;
-import com.squareup.okhttp.Callback;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.Response;
-
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
-
-import java.io.IOException;
-
 public class MainActivity extends AppCompatActivity {
     private TextView textView;
     private Button button;
+    private Thread thread;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,16 +28,10 @@ public class MainActivity extends AppCompatActivity {
         });
         //loadNetworkDataByNewThread();
     }
-
-
-    @Subscribe(threadMode = ThreadMode.MAIN)
-    public void hello(String s){
-        Log.i("TAG", "hello: MAIN1"+Thread.currentThread().getName());
-        textView.setText(s);
-    }
     @Subscribe(threadMode = ThreadMode.POSTING)
     public void hello1(String s){
-        Log.i("TAG", "hello1: POSTING1"+Thread.currentThread().getName());
+
+        Log.i("TAG", "POSTING1");
     }
     @Override
     protected void onDestroy() {

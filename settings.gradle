@@ -1,1 +1,1 @@
-include ':hotupdate', ':rxdemo', ':mvpdemo', ':quickcode', ':okhttpdemo', ':retrofitdemo', ':viewpagerdemo'
+include ':hotupdate', ':rxdemo', ':mvpdemo', ':quickcode', ':okhttpdemo', ':retrofitdemo', ':butterknife'

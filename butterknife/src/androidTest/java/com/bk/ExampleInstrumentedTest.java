@@ -1,4 +1,4 @@
-package com.viewpagerdemo;
+package com.bk;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.viewpagerdemo", appContext.getPackageName());
+        assertEquals("com.bk", appContext.getPackageName());
     }
 }
