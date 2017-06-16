@@ -9,4 +9,5 @@ public interface MANU {
     String LESHI = "LeMobile";//乐视手机
     String HUAWEI = "HUAWEI";//华为手机
     String XIAOMI = "Xiaomi";//小米手机
+    String MEIZU = "Meizu";//魅族手机
 }
