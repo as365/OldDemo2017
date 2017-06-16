@@ -26,8 +26,8 @@ public class CustomButton extends Button {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        int width = mmeasure(widthMeasureSpec, 100);
-        int height = mmeasure(heightMeasureSpec, 100);
+        int width = measureW(widthMeasureSpec, 100);
+        int height = measureH(heightMeasureSpec, 100);
 
         if (width < height){
             height = width;
@@ -39,32 +39,50 @@ public class CustomButton extends Button {
     }
 
     /**
-     * 源码中已经含有measure所以需要自定义
-     * @param measureSpec
-     * @param defaultSize
+     * 测量高度
+     * @param heightMeasureSpec
+     * @param i 最大值
      * @return
      */
-    private int mmeasure(int measureSpec, int defaultSize) {
-        int result = defaultSize;
-        int mode = MeasureSpec.getMode(measureSpec);
-        int size = MeasureSpec.getSize(measureSpec);
-
-        switch(mode){
+    private int measureH(int heightMeasureSpec, int i) {
+        int result = i;
+        int mode = MeasureSpec.getMode(heightMeasureSpec);
+        int size = MeasureSpec.getSize(heightMeasureSpec);
+        switch (mode){
             case MeasureSpec.EXACTLY:
                 result = size;
                 break;
             case MeasureSpec.AT_MOST:
-                result = size;
+                result = Math.min(20 * 2,i);
                 break;
             case MeasureSpec.UNSPECIFIED:
-                result = defaultSize;
-                break;
-            default:
                 break;
         }
         return result;
     }
 
+    /**
+     * 测量宽度
+     * @param widthMeasureSpec
+     * @param i
+     * @return
+     */
+    private int measureW(int widthMeasureSpec, int i) {
+        int result = i;
+        int mode = MeasureSpec.getMode(widthMeasureSpec);
+        int size = MeasureSpec.getSize(widthMeasureSpec);
+        switch (mode){
+            case MeasureSpec.EXACTLY:
+                result = size;
+                break;
+            case MeasureSpec.AT_MOST:
+                result = Math.min(20* 2,i);
+                break;
+            case MeasureSpec.UNSPECIFIED:
+                break;
+        }
+        return result;
+    }
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
