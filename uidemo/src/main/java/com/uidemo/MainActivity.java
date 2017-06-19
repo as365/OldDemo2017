@@ -1,21 +1,16 @@
 package com.uidemo;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.RadioButton;
-import android.widget.Toast;
 
 import com.lljjcoder.citylist.CityListSelectActivity;
 import com.lljjcoder.citylist.bean.CityInfoBean;
-import com.lljjcoder.citypickerview.widget.CityPicker;
 
 
 public class MainActivity extends AppCompatActivity {
     private RadioButton message;
-    private CityPicker cityPicker;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,9 +35,9 @@ public class MainActivity extends AppCompatActivity {
                 //城市名称
                 String cityName = cityInfoBean.getName();
                 //纬度
-                String latitude = cityInfoBean.getLongitude();
+                String longitude = cityInfoBean.getLongitude();
                 //经度
-                String longitude = cityInfoBean.getLatitude();
+                String latitude = cityInfoBean.getLatitude();
 
                 //获取到城市名称，经纬度值后可自行使用...
             }
