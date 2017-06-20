@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
                 musicStatus.setText("Stopped");
                 btnPlayOrPause.setText("PLAY");
                 musicService.stop();
-                animator.pause();
+                animator.start();
                 musicService.tag = false;
             }
         });

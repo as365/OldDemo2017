@@ -39,12 +39,9 @@ public class MusicService extends Service {
 
     public void stop() {
         if (mediaPlayer != null) {
-            mediaPlayer.stop();
             try {
-                mediaPlayer.reset();
-                mediaPlayer.setDataSource(MUSIC_URL);
-                mediaPlayer.prepare();
                 mediaPlayer.seekTo(0);
+                mediaPlayer.start();
             } catch (Exception e) {
                 e.printStackTrace();
             }
