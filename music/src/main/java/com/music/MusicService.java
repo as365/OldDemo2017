@@ -9,11 +9,11 @@ import android.os.IBinder;
 public class MusicService extends Service {
     public MediaPlayer mediaPlayer;
     public boolean tag = false;
-
+    public static final String MUSIC_URL ="http://liangchaojie.oss-cn-hangzhou.aliyuncs.com/chengdu.mp3" ;
     public MusicService() {
         mediaPlayer = new MediaPlayer();
         try {
-            mediaPlayer.setDataSource("http://218.12.233.23/m10.music.126.net/20170620111205/ea2a92ea1700d1d4c2bddf6c96efeb68/ymusic/fa90/df9c/59f7/95c4a2802e0b9191ae1a048f127e53c5.mp3");
+            mediaPlayer.setDataSource(MUSIC_URL);
             mediaPlayer.prepare();
             mediaPlayer.setLooping(true);
         } catch (Exception e) {
@@ -42,7 +42,7 @@ public class MusicService extends Service {
             mediaPlayer.stop();
             try {
                 mediaPlayer.reset();
-                mediaPlayer.setDataSource("/data/music.mp3");
+                mediaPlayer.setDataSource(MUSIC_URL);
                 mediaPlayer.prepare();
                 mediaPlayer.seekTo(0);
             } catch (Exception e) {
@@ -59,5 +59,13 @@ public class MusicService extends Service {
     @Override
     public IBinder onBind(Intent intent) {
         return binder;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if(mediaPlayer!=null){
+            mediaPlayer.release();
+        }
     }
 }
