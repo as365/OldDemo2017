@@ -1,0 +1,148 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/zftwelcome"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="100dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="100dp"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ProgressBar
+                android:id="@+id/ProgressBar02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:max="100"
+                android:progress="50"
+                android:secondaryProgress="70"
+                android:visibility="gone" />
+
+            <ProgressBar
+                android:id="@+id/ProgressBar01"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/textView2"
+                style="@style/textview_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.25"
+                android:text="正在登陆请稍后"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="400dp"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="70dp"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    style="@style/textview_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:paddingTop="10dp"
+                    android:text="用  户 名:"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/txtusername"
+                    style="@style/textview_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:textSize="15sp" >
+
+                    <requestFocus />
+                </EditText>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/textView12"
+                    style="@style/textview_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:text="密       码:"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/txtpassword"
+                    style="@style/textview_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:password="true"
+                    android:textSize="15sp" >
+                </EditText>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnlogin"
+                android:layout_width="340dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:background="@drawable/login_but"
+                android:gravity="center" />
+          <TextView
+        android:layout_width="900dp"
+        android:layout_height="wrap_content"
+        android:text="Copyright 2016 天津市无公害农产品（种植业）管理中心  All Rights Reserved "
+        android:textColor="@color/white"
+        android:textSize="18sp" 
+        android:gravity="center"
+        android:layout_marginTop="100dp"
+        />
+           <TextView
+        android:layout_width="700dp"
+        android:layout_height="wrap_content"
+        android:text="技术支持: 北京农业信息技术研究中心"
+        android:textColor="@color/white"
+        android:textSize="18sp" 
+         android:gravity="center"
+        />
+        </LinearLayout>
+    </FrameLayout>
+  
+
+   
+    
+
+</LinearLayout>

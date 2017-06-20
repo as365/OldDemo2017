@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg2"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/zsyz_scanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="二维码扫描" />
+
+    <WebView
+        android:id="@+id/zsyz_webview"
+        android:layout_width="match_parent"
+        android:layout_height="300dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="产品名称"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="产品种类"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="包装时间"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="生产单位"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="认证类型"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="追溯号码"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical" >
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/zsyz_name_ok"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:checked="true"
+                    android:text="是"
+                    android:textSize="20dp" />
+
+                <RadioButton
+                    android:id="@+id/zsyz_name_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:text="否"
+                    android:textSize="20dp" />
+            </RadioGroup>
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/zsyz_type_ok"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:checked="true"
+                    android:text="是"
+                    android:textSize="20dp" />
+
+                <RadioButton
+                    android:id="@+id/zsyz_type_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:text="否"
+                    android:textSize="20dp" />
+            </RadioGroup>
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/zsyz_time_ok"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:checked="true"
+                    android:text="是"
+                    android:textSize="20dp" />
+
+                <RadioButton
+                    android:id="@+id/zsyz_time_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:text="否"
+                    android:textSize="20dp" />
+            </RadioGroup>
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/zsyz_unit_ok"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:checked="true"
+                    android:text="是"
+                    android:textSize="20dp" />
+
+                <RadioButton
+                    android:id="@+id/zsyz_unit_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:text="否"
+                    android:textSize="20dp" />
+            </RadioGroup>
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/zsyz_certification_ok"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:checked="true"
+                    android:text="是"
+                    android:textSize="20dp" />
+
+                <RadioButton
+                    android:id="@+id/zsyz_certification_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:text="否"
+                    android:textSize="20dp" />
+            </RadioGroup>
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/zsyz_trace_ok"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:checked="true"
+                    android:text="是"
+                    android:textSize="20dp" />
+
+                <RadioButton
+                    android:id="@+id/zsyz_trace_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:text="否"
+                    android:textSize="20dp" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/zsyz_name_et"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:hint="存在的问题"
+                android:visibility="invisible"
+                />
+
+            <EditText
+                android:id="@+id/zsyz_type_et"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:hint="存在的问题" />
+
+            <EditText
+                android:id="@+id/zsyz_time_et"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:hint="存在的问题"
+               android:visibility="invisible"/>
+
+            <EditText
+                android:id="@+id/zsyz_unit_et"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:hint="存在的问题" />
+
+            <EditText
+                android:id="@+id/zsyz_certification_et"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:hint="存在的问题"
+                android:visibility="invisible" />
+
+            <EditText
+                android:id="@+id/zsyz_trace_et"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:hint="存在的问题"
+                android:visibility="invisible" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/zsyz_updata"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="上传消息" />
+
+</LinearLayout>

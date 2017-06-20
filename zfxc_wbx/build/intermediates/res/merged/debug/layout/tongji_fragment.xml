@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/zftbackround"
+    >
+<!--     <TextView  -->
+<!--         android:layout_width="wrap_content" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:text="统计分析页面" -->
+<!--         /> -->
+<TextView
+        android:id="@+id/top_title"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#37BC38"
+        android:focusable="false"
+        android:gravity="center"
+        android:text="统计分析"
+        android:textColor="#CDEBCC"
+        android:textSize="28sp" />
+    <WebView 
+        android:id="@+id/tj_webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+</LinearLayout>

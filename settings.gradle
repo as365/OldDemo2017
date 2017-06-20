@@ -1,1 +1,2 @@
 include ':hotupdate', ':rxdemo', ':mvpdemo', ':quickcode', ':okhttpdemo', ':retrofitdemo', ':butterknife', ':uidemo', ':xiaomipush', ':music'
+include ':zfxc_wbx'

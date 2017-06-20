@@ -1,0 +1,7 @@
+#Tue Jun 20 16:59:14 CST 2017
+base.0=E\:\\workspace\\Demo\\zfxc_wbx\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_6d94008adae95e1631ec30de827b495ec1037401
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=E\:\\workspace\\Demo\\zfxc_wbx\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_1807f1f616d98dc24ca03705941abd13ffb8e4d2\\classes.dex
+base.1=E\:\\workspace\\Demo\\zfxc_wbx\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_1807f1f616d98dc24ca03705941abd13ffb8e4d2
+file.0=E\:\\workspace\\Demo\\zfxc_wbx\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_6d94008adae95e1631ec30de827b495ec1037401\\classes.dex

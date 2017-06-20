@@ -1,0 +1,584 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent"
+    android:scrollbars="vertical">
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+     >
+
+ 
+    <LinearLayout
+ android:id="@+id/textinput"
+ android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content">
+  
+            <LinearLayout
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content">
+     <TextView
+        android:id="@+id/textViewddate"
+        android:layout_width="120sp"
+          android:gravity="right"
+        android:layout_height="wrap_content"
+        
+        android:text="受检单位:" >
+        </TextView>
+   <EditText
+       
+        android:id="@+id/txtscompanyname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10" >
+           </EditText>    
+            <TextView
+        android:id="@+id/textViewddate1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="巡查日期:" >
+        </TextView>
+   <EditText
+       
+        android:id="@+id/etddate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:enabled="false"
+        android:ems="10" >
+           </EditText>
+           
+         <Button
+    android:id="@+id/ButtonSetDate"
+    android:layout_width="47dp"
+    android:layout_height="34dp" android:textColor="#fff"
+    android:layout_x="266dp"
+    android:layout_y="238dp"
+    android:text="+" >
+               <requestFocus />
+             
+         </Button>      
+           </LinearLayout>
+           
+             <LinearLayout
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content">
+        <TextView
+        android:id="@+id/textViewddate2"
+        android:layout_width="120sp"
+        android:layout_marginRight="0dp"
+        android:layout_height="wrap_content"
+    android:gravity="right"
+        android:text="地    址：" >
+        </TextView>
+   <EditText
+       
+        android:id="@+id/txtsaddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10" >
+           </EditText>   
+           </LinearLayout>
+            
+                <LinearLayout
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content">
+     <TextView
+        android:id="@+id/textViewddate3"
+       android:layout_width="120sp"
+          android:gravity="right"
+        android:layout_height="wrap_content"
+        android:text="联  系  人：" >
+        </TextView>
+   <EditText
+       
+        android:id="@+id/txtscontactor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10" >
+           </EditText>     <TextView
+       android:layout_width="120sp"
+          android:gravity="right"
+        android:layout_height="wrap_content"
+        android:text="电    话：" >
+        </TextView>
+   <EditText
+       
+        android:id="@+id/txtstelephone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10" >
+           </EditText>   
+           </LinearLayout>
+        
+           
+                  <LinearLayout
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content">
+     <TextView
+        android:id="@+id/textViewddate4"
+        android:layout_width="260dp"
+        android:layout_marginRight="0dp"
+      
+        android:layout_height="wrap_content"
+    android:gravity="right"
+        android:text="1.是否按照规定建立并保存农产品生产记录" >
+        </TextView>
+        <RadioGroup android:id="@+id/rgsscjlresult" android:contentDescription="性别" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+    <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/sscjlradiofinish" android:text="是" android:checked="true"></RadioButton>
+     <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/sscjlradiounfinish" android:text="否"></RadioButton>
+         
+  </RadioGroup>
+    <EditText
+       
+        android:id="@+id/txtsscjlproblem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"        
+        android:hint="存在问题"
+        android:ems="10" >
+           </EditText>  
+        
+           </LinearLayout>
+           
+                      <LinearLayout
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content">
+     <TextView
+        android:id="@+id/textViewddate5"
+        android:layout_width="260dp"
+        android:layout_marginRight="0dp"
+      
+        android:layout_height="wrap_content"
+    android:gravity="right"
+        android:text="2.是否有伪造农产品生产记录行为" >
+        </TextView>
+        <RadioGroup android:id="@+id/rgswzjlresult" android:contentDescription="性别" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+    <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/swzjlradiofinish" android:text="是" android:checked="true"></RadioButton>
+     <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/swzjlradiounfinish" android:text="否"></RadioButton>
+         
+  </RadioGroup>
+    <EditText
+       
+        android:id="@+id/txtswzjlproblem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"        
+        android:hint="存在问题"
+        android:ems="10" >
+           </EditText>  
+        
+           </LinearLayout>
+           
+                          <LinearLayout
+  android:layout_width="fill_parent"
+  android:layout_height="45dp">
+     <TextView
+        android:id="@+id/textViewddate6"
+        android:layout_width="260dp"
+        android:layout_marginRight="0dp"
+      
+        android:layout_height="wrap_content"
+    android:gravity="right"
+        android:text="3.是否非法购买或使用不符合质量安全标准或国家明令禁止使用的农业投入品" >
+        </TextView>
+        <RadioGroup android:id="@+id/rgstrpresult" android:contentDescription="性别" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+    <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/strpradiofinish" android:text="是" android:checked="true"></RadioButton>
+     <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/strpradiounfinish" android:text="否"></RadioButton>
+         
+  </RadioGroup>
+    <EditText
+       
+        android:id="@+id/txtstrpproblem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"        
+        android:hint="存在问题"
+        android:ems="10" >
+           </EditText>  
+        
+           </LinearLayout>
+           
+                              <LinearLayout
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content">
+     <TextView
+        android:id="@+id/textViewddate7"
+        android:layout_width="260dp"
+        android:layout_marginRight="0dp"
+      
+        android:layout_height="wrap_content"
+    android:gravity="right"
+        android:text="4.是否按照农药登记品准适用范围使用农药" >
+        </TextView>
+        <RadioGroup android:id="@+id/rgsnysyresult" android:contentDescription="性别" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+    <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/snysyradiofinish" android:text="是" android:checked="true"></RadioButton>
+     <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/snysyradiounfinish" android:text="否"></RadioButton>
+         
+  </RadioGroup>
+    <EditText
+       
+        android:id="@+id/txtsnysyproblem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"        
+        android:hint="存在问题"
+        android:ems="10" >
+           </EditText>  
+        
+           </LinearLayout>
+           
+                                  <LinearLayout
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content">
+     <TextView
+        android:id="@+id/textViewddate8"
+        android:layout_width="260dp"
+        android:layout_marginRight="0dp"
+      
+        android:layout_height="wrap_content"
+    android:gravity="right"
+        android:text="5.是否严格执行农药使用安全间隔期" >
+        </TextView>
+        <RadioGroup android:id="@+id/rgsjgqresult" android:contentDescription="性别" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+    <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/sjgqrradiofinish" android:text="是" android:checked="true"></RadioButton>
+     <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/sjgqrradiounfinish" android:text="否"></RadioButton>
+         
+  </RadioGroup>
+    <EditText
+       
+        android:id="@+id/txtsjgqproblem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"        
+        android:hint="存在问题"
+        android:ems="10" >
+           </EditText>  
+        
+           </LinearLayout>
+           
+                                      <LinearLayout
+  android:layout_width="fill_parent"
+  android:layout_height="45dp">
+     <TextView
+        android:id="@+id/textViewddate9"
+        android:layout_width="260dp"
+        android:layout_marginRight="0dp"
+      
+        android:layout_height="wrap_content"
+    android:gravity="right"
+        android:text="6.销售的农产品是否按规定进行包装标示并规范使用农产品质量标志" >
+        </TextView>
+        <RadioGroup android:id="@+id/rgsbzbsresult" android:contentDescription="性别" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+    <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/sbzbradiofinish" android:text="是" android:checked="true"></RadioButton>
+     <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/sbzbradiounfinish" android:text="否"></RadioButton>
+         
+  </RadioGroup>
+    <EditText
+       
+        android:id="@+id/txtsbzbsproblem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"        
+        android:hint="存在问题"
+        android:ems="10" >
+           </EditText>  
+        
+           </LinearLayout>
+           
+                                          <LinearLayout
+  android:layout_width="fill_parent"
+  android:layout_height="45dp">
+     <TextView
+        android:id="@+id/textViewddate10"
+        android:layout_width="260dp"
+        android:layout_marginRight="0dp"
+      
+        android:layout_height="wrap_content"
+    android:gravity="right"
+        android:text="7.是否自行或委托检测及机构对农产品质量安全状况进行检测" >
+        </TextView>
+        <RadioGroup android:id="@+id/rgsjcresult" android:contentDescription="性别" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+    <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/sjcradiofinish" android:text="是" android:checked="true"></RadioButton>
+     <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/sjcradiounfinish" android:text="否"></RadioButton>
+         
+  </RadioGroup>
+    <EditText
+       
+        android:id="@+id/txtsjcproblem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"        
+        android:hint="存在问题"
+        android:ems="10" >
+           </EditText>  
+        
+           </LinearLayout>
+           
+                                              <LinearLayout
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content">
+     <TextView
+        android:id="@+id/textViewddate12"
+        android:layout_width="260dp"
+        android:layout_marginRight="0dp"
+      
+        android:layout_height="wrap_content"
+    android:gravity="right"
+        android:text="8.是否非法使用保鲜剂、防腐剂、添加剂" >
+        </TextView>
+        <RadioGroup android:id="@+id/rgstjjresult" android:contentDescription="性别" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+    <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/stjjradiofinish" android:text="是" android:checked="true"></RadioButton>
+     <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/stjjradiounfinish" android:text="否"></RadioButton>
+         
+  </RadioGroup>
+    <EditText
+       
+        android:id="@+id/txtstjjproblem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"        
+        android:hint="存在问题"
+        android:ems="10" >
+           </EditText>  
+        
+           </LinearLayout>
+           
+                                                  <LinearLayout
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content">
+     <TextView
+        android:id="@+id/textViewddate11"
+        android:layout_width="260dp"
+        android:layout_marginRight="0dp"
+      
+        android:layout_height="wrap_content"
+    android:gravity="right"
+        android:text="9.是否对产品进行监督抽查" >
+        </TextView>
+        <RadioGroup android:id="@+id/rgsjdccresult" android:contentDescription="性别" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+    <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/sjdcradiofinish" android:text="是" android:checked="true"></RadioButton>
+     <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/sjdcradiounfinish" android:text="否"></RadioButton>
+         
+  </RadioGroup>
+    <EditText
+       
+        android:id="@+id/txtsjdccproblem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"        
+        android:hint="存在问题"
+        android:ems="10" >
+           </EditText>  
+        
+           </LinearLayout>
+           
+            <LinearLayout
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content">
+     <TextView
+        android:id="@+id/textViewddate13"
+        android:layout_width="120sp"
+          android:gravity="right"
+        android:layout_height="wrap_content"
+        
+        android:text="处理意见：" >
+        </TextView>
+   <EditText
+       
+        android:id="@+id/txtsclyj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10" >
+           </EditText>     
+           </LinearLayout>
+                                                  
+                <LinearLayout
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content">
+     <TextView
+        android:id="@+id/textViewddate14"
+       android:layout_width="120sp"
+          android:gravity="right"
+        android:layout_height="wrap_content"
+        android:text="市级人员：" >
+        </TextView>
+   <EditText
+       
+        android:id="@+id/txtsshiji"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10" >
+           </EditText>    
+           
+   <TextView
+        android:id="@+id/sss"
+       android:layout_width="120sp"
+          android:gravity="right"
+        android:layout_height="wrap_content"
+        android:text="区级人员：" >
+        </TextView>
+   <EditText
+       
+        android:id="@+id/txtsquji"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10" >
+           </EditText>   
+           </LinearLayout>
+        
+                    <LinearLayout
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content">
+     <TextView
+        android:id="@+id/textViewddate15"
+       android:layout_width="120sp"
+          android:gravity="right"
+        android:layout_height="wrap_content"
+        android:text="镇级人员：" >
+        </TextView>
+   <EditText
+       
+        android:id="@+id/txtszhenji"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10" >
+           </EditText>     <TextView
+        android:id="@+id/textViewddate16"
+       android:layout_width="120sp"
+          android:gravity="right"
+        android:layout_height="wrap_content"
+        android:text="村级人员：" >
+        </TextView>
+   <EditText
+       
+        android:id="@+id/txtscunji"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10" >
+           </EditText>   
+           </LinearLayout>
+           
+                    
+                  
+            <LinearLayout
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content">
+     <TextView
+        android:id="@+id/textViewddate17"
+       android:layout_width="120sp"
+          android:gravity="right"
+        android:layout_height="wrap_content"
+        android:text="巡查单位：" >
+        </TextView>
+   <EditText
+       
+        android:id="@+id/txtsjcdw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10" >
+           </EditText>   
+           </LinearLayout>
+         
+        <LinearLayout
+ android:id="@+id/title"
+  android:layout_width="fill_parent"
+  android:layout_below="@+id/textinput"
+  android:orientation="horizontal"
+   android:gravity="center"
+  android:layout_height="wrap_content">
+  <Button
+        android:id="@+id/save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"     
+        android:layout_marginLeft="19dp"
+        android:text="保存" />  
+         <Button
+        android:id="@+id/btnzp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"     
+   
+        android:text="照片" />
+            <Button
+        android:id="@+id/btnsp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"     
+   
+        android:text="视频" />
+           <Button
+        android:id="@+id/btnsy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"     
+   
+        android:text="声音" />
+         
+           <Button
+        android:id="@+id/btnposition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"     
+   
+        android:text="位置" />
+   <Button
+        android:id="@+id/delftrecord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"     
+   
+        android:text="删除" />
+ <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/photo" />
+          
+            <ImageView
+        android:id="@+id/imageviewsound"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/sound" />
+            <ImageView
+        android:id="@+id/imageviewvideo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/video" />
+    </LinearLayout>
+    
+            <LinearLayout
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+   android:layout_gravity="center_horizontal"
+  >
+            <TextView
+        android:id="@+id/txtsaddressdes"
+       android:layout_width="300dp"
+          android:gravity="left"
+        android:layout_height="wrap_content"
+        android:text="" >
+        </TextView>
+          <com.baidu.mapapi.map.MapView
+        android:id="@+id/id_bmapView"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal"
+        android:clickable="true" />
+          </LinearLayout>
+           </LinearLayout>
+
+</RelativeLayout>
+</ScrollView>

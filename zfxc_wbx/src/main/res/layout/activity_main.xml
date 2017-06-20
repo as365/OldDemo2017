@@ -1,0 +1,92 @@
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent" 
+	android:orientation="vertical"
+	>
+
+<!-- 	<android.support.v4.view.ViewPager -->
+<!-- 		android:id="@+id/pager" -->
+<!-- 		android:layout_width="fill_parent" -->
+<!-- 		android:layout_height="wrap_content" -->
+<!-- 		android:layout_above="@+id/titlelayout" > -->
+<!-- 	</android.support.v4.view.ViewPager> -->
+
+<!-- 	<LinearLayout -->
+<!-- 		android:id="@+id/titlelayout" -->
+<!-- 		android:layout_width="fill_parent" -->
+<!-- 		android:layout_height="wrap_content" -->
+<!-- 		android:layout_alignParentBottom="true" > -->
+
+<!-- 		<RadioGroup -->
+<!-- 			android:id="@+id/tab_menu" -->
+<!-- 			android:layout_width="fill_parent" -->
+<!-- 			android:layout_height="wrap_content" -->
+<!-- 			android:background="@drawable/tab_bg_normal" -->
+<!-- 			android:orientation="horizontal" > -->
+
+<!-- 			<RadioButton -->
+<!-- 				android:id="@+id/title1" -->
+<!-- 				style="@style/tab_style" -->
+<!-- 				android:checked="true" -->
+<!-- 				android:drawableTop="@drawable/tab_activity_selector" -->
+<!-- 				android:text="任务公告" /> -->
+
+<!-- 			<RadioButton -->
+<!-- 				android:id="@+id/title2" -->
+<!-- 				style="@style/tab_style" -->
+<!-- 				android:drawableTop="@drawable/xczf_tab_activity_selector" -->
+<!-- 				android:text="现场执法" /> -->
+
+<!-- 		 <RadioButton -->
+<!-- 				android:id="@+id/title3"  -->
+<!--  				style="@style/tab_style"   -->
+<!--  				android:drawableTop="@drawable/zxjk_tab_activity_selector" -->
+<!-- 				android:text="在线监控" /> -->
+<!--  			 <RadioButton -->
+<!--  				android:id="@+id/title4"  -->
+<!-- 				style="@style/tab_style"  -->
+<!-- 				android:drawableTop="@drawable/zsyz_tab_activity_selector"  -->
+<!--  				android:text="追溯验证" />   -->
+<!-- 		  <RadioButton -->
+<!-- 				android:id="@+id/title3" -->
+<!-- 				style="@style/tab_style" -->
+<!-- 				android:drawableTop="@drawable/zsyz_tab_activity_selector" -->
+<!-- 				android:text="统计分析" /> -->
+			
+<!-- 			<RadioButton -->
+<!-- 				android:id="@+id/title5" -->
+<!-- 				style="@style/tab_style" -->
+<!-- 				android:drawableTop="@drawable/zfsc_tab_activity_selector" -->
+<!-- 				android:text="执法依据" /> -->
+			
+<!-- 			<RadioButton -->
+<!-- 				android:id="@+id/title6" -->
+<!-- 				style="@style/tab_style" -->
+<!-- 				android:drawableTop="@drawable/xtsz_tab_activity_selector" -->
+<!-- 				android:text="系统设置" /> -->
+<!-- 		</RadioGroup> -->
+<!-- 	</LinearLayout> -->
+ <FrameLayout
+        android:id="@+id/activity_realtabcontent"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1" 
+        
+        />
+    <android.support.v4.app.FragmentTabHost 
+         android:id="@+id/activity_tabhost" 
+         android:layout_width="fill_parent" 
+        android:layout_height="80dp"  
+        android:background="@color/transparent"
+        > 
+
+         <FrameLayout 
+            android:id="@+id/activity_tabcontent" 
+            android:layout_width="0dp" 
+            android:layout_height="0dp" 
+             android:layout_weight="0" 
+             
+             />        
+    </android.support.v4.app.FragmentTabHost> 
+</LinearLayout>

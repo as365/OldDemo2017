@@ -13,6 +13,7 @@
       <module fileurl="file://$PROJECT_DIR$/rxdemo/rxdemo.iml" filepath="$PROJECT_DIR$/rxdemo/rxdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/uidemo/uidemo.iml" filepath="$PROJECT_DIR$/uidemo/uidemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/xiaomipush/xiaomipush.iml" filepath="$PROJECT_DIR$/xiaomipush/xiaomipush.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zfxc_wbx/zfxc_wbx.iml" filepath="$PROJECT_DIR$/zfxc_wbx/zfxc_wbx.iml" />
     </modules>
   </component>
 </project>

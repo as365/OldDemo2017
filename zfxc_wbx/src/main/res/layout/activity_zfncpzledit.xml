@@ -1,0 +1,1466 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:scrollbars="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin" >
+
+        <LinearLayout
+            android:id="@+id/textinput"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="一、基本情况"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"	
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1." />
+
+                <TextView
+                    android:id="@+id/textViewddate"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:text="受检单位:" >
+                </TextView>
+
+                <Spinner
+                    android:id="@+id/nctxtsjdanwei"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:spinnerMode="dropdown" />
+
+                <TextView
+                    android:id="@+id/textViewddate1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="检查日期:" >
+                </TextView>
+
+                <EditText
+                    android:id="@+id/ncetddate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:enabled="false" >
+                </EditText>
+
+                <Button
+                    android:id="@+id/ncButtonSetDate"
+                    android:layout_width="47dp"
+                    android:layout_height="34dp"
+                    android:layout_x="266dp"
+                    android:layout_y="238dp"
+                    android:text="+"
+                    android:textColor="#fff" >
+
+                    <requestFocus />
+                </Button>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2." />
+
+                <TextView
+                    android:id="@+id/textViewddate2"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:text="巡查组成员：" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/ncpzl_user"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/nctxtother"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10" >
+                </EditText>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:text="3.地址：" >
+                </TextView>
+
+                <EditText
+                    android:id="@+id/nctxtadress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10" >
+                </EditText>
+
+                <Button
+                    android:id="@+id/ncaddress_bt"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/user_icon_weizhi" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="二、质量管理"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" 
+                    android:layout_marginBottom="5dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/textViewddate4"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="0dp"
+                        android:text="1.各种证、照是否齐全且在有效期限内" >
+                    </TextView>
+
+                    <RadioGroup
+                        android:id="@+id/ncrgsscjlresult"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="性别"
+                        android:orientation="horizontal" >
+
+                        <RadioButton
+                            android:id="@+id/ncsscjlradiofinish"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="是" >
+                        </RadioButton>
+
+                        <RadioButton
+                            android:id="@+id/ncsscjlradiounfinish"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="否" >
+                        </RadioButton>
+                    </RadioGroup>
+
+                    <EditText
+                        android:id="@+id/nctxtsscjlproblem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="存在问题" >
+                    </EditText>
+                     <ImageView
+                    android:id="@+id/ncss_getImage"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/user_icon_tupian2" />
+                      <ImageView
+                    android:id="@+id/ncss_getvideo"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/user_icon_shipin2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" 
+                    android:layout_marginBottom="5dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/textViewddate5"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="0dp"
+                        android:text="2.是否有质量管理制度并落实到位" >
+                    </TextView>
+
+                    <RadioGroup
+                        android:id="@+id/ncrgswzjlresult"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="性别"
+                        android:orientation="horizontal" >
+
+                        <RadioButton
+                            android:id="@+id/ncswzjlradiofinish"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="是" >
+                        </RadioButton>
+
+                        <RadioButton
+                            android:id="@+id/ncswzjlradiounfinish"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="否" >
+                        </RadioButton>
+                    </RadioGroup>
+
+                    <EditText
+                        android:id="@+id/nctxtswzjlproblem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="存在问题" >
+                    </EditText>
+                     <ImageView
+                    android:id="@+id/ncsw_getImage"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/user_icon_tupian2" />
+                      <ImageView
+                    android:id="@+id/ncsw_getvideo"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/user_icon_shipin2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="45dp" 
+                    android:layout_marginBottom="5dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/textViewddate6"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:text="3.生产和销售记录档案是否保存两年" >
+                    </TextView>
+
+                    <RadioGroup
+                        android:id="@+id/ncrgstrpresult"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="性别"
+                        android:orientation="horizontal" >
+
+                        <RadioButton
+                            android:id="@+id/ncstrpradiofinish"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="是" >
+                        </RadioButton>
+
+                        <RadioButton
+                            android:id="@+id/ncstrpradiounfinish"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="否" >
+                        </RadioButton>
+                    </RadioGroup>
+
+                    <EditText
+                        android:id="@+id/nctxtstrpproblem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="存在问题" >
+                    </EditText>
+                     <ImageView
+                    android:id="@+id/ncst_getImage"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/user_icon_tupian2" />
+                      <ImageView
+                    android:id="@+id/ncst_getvideo"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/user_icon_shipin2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" 
+                    android:layout_marginBottom="5dp"
+                    >   
+
+                    <TextView
+                        android:id="@+id/textViewddate7"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="0dp"
+                        android:text="4.是否有监管员并能发挥作用" >
+                    </TextView>
+
+                    <RadioGroup
+                        android:id="@+id/ncrgsnysyresult"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="性别"
+                        android:orientation="horizontal" >
+
+                        <RadioButton
+                            android:id="@+id/ncsnysyradiofinish"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="是" >
+                        </RadioButton>
+
+                        <RadioButton
+                            android:id="@+id/ncsnysyradiounfinish"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="否" >
+                        </RadioButton>
+                    </RadioGroup>
+
+                    <EditText
+                        android:id="@+id/nctxtsnysyproblem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="存在问题" >
+                    </EditText>
+                     <ImageView
+                    android:id="@+id/ncsn_getImage"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/user_icon_tupian2" />
+                      <ImageView
+                    android:id="@+id/ncsn_getvideo"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/user_icon_shipin2" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" 
+                android:layout_marginBottom="5dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="三、产地环境"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" 
+                    android:layout_marginBottom="5dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/textViewddate8"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="0dp"
+                        android:text="1.产地周边环境是否清洁，无生产及生活垃圾" >
+                    </TextView>
+
+                    <RadioGroup
+                        android:id="@+id/ncrgsjgqresult"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="性别"
+                        android:orientation="horizontal" >
+
+                        <RadioButton
+                            android:id="@+id/ncsjgqrradiofinish"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="是" >
+                        </RadioButton>
+
+                        <RadioButton
+                            android:id="@+id/ncsjgqrradiounfinish"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="否" >
+                        </RadioButton>
+                    </RadioGroup>
+
+                    <EditText
+                        android:id="@+id/nctxtsjgqproblem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="存在问题" >
+                    </EditText>
+                     <ImageView
+                    android:id="@+id/ncsj_getImage"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/user_icon_tupian2" />
+                      <ImageView
+                    android:id="@+id/ncsj_getvideo"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/user_icon_shipin2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="45dp" 
+                    android:layout_marginBottom="5dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/textViewddate9"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="0dp"
+                        android:text="2.产区范围明确，无造成潜在危害的污染源" >
+                    </TextView>
+
+                    <RadioGroup
+                        android:id="@+id/ncrgsbzbsresult"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="性别"
+                        android:orientation="horizontal" >
+
+                        <RadioButton
+                            android:id="@+id/ncsbzbradiofinish"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="是" >
+                        </RadioButton>
+
+                        <RadioButton
+                            android:id="@+id/ncsbzbradiounfinish"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="否" >
+                        </RadioButton>
+                    </RadioGroup>
+
+                    <EditText
+                        android:id="@+id/nctxtsbzbsproblem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="存在问题" >
+                    </EditText>
+                     <ImageView
+                    android:id="@+id/ncsb_getImage"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/user_icon_tupian2" />
+                      <ImageView
+                    android:id="@+id/ncsb_getvideo"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/user_icon_shipin2" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" 
+                android:layout_marginBottom="5dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="四、生产管理"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="45dp" 
+                    android:layout_marginBottom="5dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/textViewddate10"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="0dp"
+                        android:text="1.投入品是否购正规的门店；票据是否齐全" >
+                    </TextView>
+
+                    <RadioGroup
+                        android:id="@+id/ncrgsjcresult"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="性别"
+                        android:orientation="horizontal" >
+
+                        <RadioButton
+                            android:id="@+id/ncsjcradiofinish"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="是" >
+                        </RadioButton>
+
+                        <RadioButton
+                            android:id="@+id/ncsjcradiounfinish"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="否" >
+                        </RadioButton>
+                    </RadioGroup>
+
+                    <EditText
+                        android:id="@+id/nctxtsjcproblem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="存在问题" >
+                    </EditText>
+                    <ImageView
+                    android:id="@+id/nccr_getImage"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/user_icon_tupian2" />
+                      <ImageView
+                    android:id="@+id/nccr_getvideo"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/user_icon_shipin2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" 
+                    android:layout_marginBottom="5dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/textViewddate12"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="0dp"
+                        android:text="2.是否有专人负责投入品管理" >
+                    </TextView>
+
+                    <RadioGroup
+                        android:id="@+id/ncrgstjjresult"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="性别"
+                        android:orientation="horizontal" >
+
+                        <RadioButton
+                            android:id="@+id/ncstjjradiofinish"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="是" >
+                        </RadioButton>
+
+                        <RadioButton
+                            android:id="@+id/ncstjjradiounfinish"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="否" >
+                        </RadioButton>
+                    </RadioGroup>
+
+                    <EditText
+                        android:id="@+id/nctxtstjjproblem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="存在问题" >
+                    </EditText>
+                    <ImageView
+                    android:id="@+id/ncjj_getImage"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/user_icon_tupian2" />
+                      <ImageView
+                    android:id="@+id/ncjj_getvideo"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/user_icon_shipin2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" 
+                    android:layout_marginBottom="5dp"
+                    >
+
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="0dp"
+                        android:text="3.投入品台账记录是否详实、完整" >
+                    </TextView>
+
+                    <RadioGroup
+                        android:id="@+id/ncwanzhengresult"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="性别"
+                        android:orientation="horizontal" >
+
+                        <RadioButton
+                            android:id="@+id/ncwanzhengradiofinish"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="是" >
+                        </RadioButton>
+
+                        <RadioButton
+                            android:id="@+id/ncwanzhengradiounfinish"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="否" >
+                        </RadioButton>
+                    </RadioGroup>
+
+                    <EditText
+                        android:id="@+id/ncwanzhengproblem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="存在问题" >
+                    </EditText>
+                     <ImageView
+                    android:id="@+id/ncwa_getImage"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/user_icon_tupian2" />
+                      <ImageView
+                    android:id="@+id/ncwa_getvideo"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/user_icon_shipin2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" 
+                    android:layout_marginBottom="5dp"
+                    >
+
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="0dp"
+                        android:text="4.投入品仓储是否分类、摆放整齐" >
+                    </TextView>
+
+                    <RadioGroup
+                        android:id="@+id/nczhengqiresult"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="性别"
+                        android:orientation="horizontal" >
+
+                        <RadioButton
+                            android:id="@+id/nczhengqiradiofinish"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="是" >
+                        </RadioButton>
+
+                        <RadioButton
+                            android:id="@+id/nczhengqiradiounfinish"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="否" >
+                        </RadioButton>
+                    </RadioGroup>
+
+                    <EditText
+                        android:id="@+id/nczhengqiproblem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="存在问题" >
+                    </EditText>
+                     <ImageView
+                    android:id="@+id/nczheng_getImage"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/user_icon_tupian2" />
+                      <ImageView
+                    android:id="@+id/nczheng_getvideo"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/user_icon_shipin2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" 
+                    android:layout_marginBottom="5dp"
+                    >
+
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="0dp"
+                        android:text="5.是否有生产标准或技术规范并遵照实行" >
+                    </TextView>
+
+                    <RadioGroup
+                        android:id="@+id/ncshixingresult"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="性别"
+                        android:orientation="horizontal" >
+
+                        <RadioButton
+                            android:id="@+id/ncshixingradiofinish"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="是" >
+                        </RadioButton>
+
+                        <RadioButton
+                            android:id="@+id/ncshixingradiounfinish"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="否" >
+                        </RadioButton>
+                    </RadioGroup>
+
+                    <EditText
+                        android:id="@+id/ncshixingproblem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="存在问题" >
+                    </EditText>
+                     <ImageView
+                    android:id="@+id/ncshi_getImage"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/user_icon_tupian2" />
+                      <ImageView
+                    android:id="@+id/ncshi_getvideo"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/user_icon_shipin2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" 
+                    android:layout_marginBottom="5dp"
+                    >
+
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="0dp"
+                        android:text="6.是否真实、完整、及时的记录田间档案" >
+                    </TextView>
+
+                    <RadioGroup
+                        android:id="@+id/ncdananresult"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="性别"
+                        android:orientation="horizontal" >
+
+                        <RadioButton
+                            android:id="@+id/ncdananradiofinish"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="是" >
+                        </RadioButton>
+
+                        <RadioButton
+                            android:id="@+id/ncdananradiounfinish"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="否" >
+                        </RadioButton>
+                    </RadioGroup>
+
+                    <EditText
+                        android:id="@+id/ncdananproblem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="存在问题" >
+                    </EditText>
+                     <ImageView
+                    android:id="@+id/ncdan_getImage"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/user_icon_tupian2" />
+                      <ImageView
+                    android:id="@+id/ncdan_getvideo"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/user_icon_shipin2" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" 
+                android:layout_marginBottom="5dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="五、质量安全"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" 
+                    android:layout_marginBottom="5dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/textViewddate11"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="0dp"
+                        android:text="1.是否有产品自检设备并进行自检" >
+                    </TextView>
+
+                    <RadioGroup
+                        android:id="@+id/nczijianresult"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="性别"
+                        android:orientation="horizontal" >
+
+                        <RadioButton
+                            android:id="@+id/nczijianradiofinish"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="是" >
+                        </RadioButton>
+
+                        <RadioButton
+                            android:id="@+id/nczijianradiounfinish"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="否" >
+                        </RadioButton>
+                    </RadioGroup>
+
+                    <EditText
+                        android:id="@+id/nczijianproblem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="存在问题" >
+                    </EditText>
+                     <ImageView
+                    android:id="@+id/nczi_getImage"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/user_icon_tupian2" />
+                      <ImageView
+                    android:id="@+id/nczi_getvideo"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/user_icon_shipin2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" 
+                    android:layout_marginBottom="5dp"
+                    >
+
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="0dp"
+                        android:text="2.产品自检结果是否记录并存档" >
+                    </TextView>
+
+                    <RadioGroup
+                        android:id="@+id/nccundangresult"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="性别"
+                        android:orientation="horizontal" >
+
+                        <RadioButton
+                            android:id="@+id/nccundangradiofinish"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="是" >
+                        </RadioButton>
+
+                        <RadioButton
+                            android:id="@+id/nccundangradiounfinish"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="否" >
+                        </RadioButton>
+                    </RadioGroup>
+
+                    <EditText
+                        android:id="@+id/nccundangproblem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="存在问题" >
+                    </EditText>
+                     <ImageView
+                    android:id="@+id/ncdang_getImage"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/user_icon_tupian2" />
+                      <ImageView
+                    android:id="@+id/ncdang_getvideo"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/user_icon_shipin2" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" 
+                android:layout_marginBottom="5dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="六、质量安全"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" 
+                    android:layout_marginBottom="5dp"
+                    >
+
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="0dp"
+                        android:text="1.成品与投入品是否分别存放" > 
+                    </TextView>
+
+                    <RadioGroup
+                        android:id="@+id/nccunfangresult"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="性别"
+                        android:orientation="horizontal" >
+
+                        <RadioButton
+                            android:id="@+id/nccunfangradiofinish"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="是" >
+                        </RadioButton>
+
+                        <RadioButton
+                            android:id="@+id/nccunfangradiounfinish"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="否" >
+                        </RadioButton>
+                    </RadioGroup>
+
+                    <EditText
+                        android:id="@+id/nccunfangproblem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="存在问题" >
+                    </EditText>
+                     <ImageView
+                    android:id="@+id/ncfang_getImage"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/user_icon_tupian2" />
+                      <ImageView
+                    android:id="@+id/ncfang_getvideo"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/user_icon_shipin2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" 
+                    android:layout_marginBottom="5dp"
+                    >
+
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="0dp"
+                        android:text="2.产品是否凭证上市" >
+                    </TextView>
+
+                    <RadioGroup
+                        android:id="@+id/ncshangshiresult"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="性别"
+                        android:orientation="horizontal" >
+
+                        <RadioButton
+                            android:id="@+id/ncshangshiradiofinish"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="是" >
+                        </RadioButton>
+
+                        <RadioButton
+                            android:id="@+id/ncshangshiradiounfinish"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="否" >
+                        </RadioButton>
+                    </RadioGroup>
+
+                    <EditText
+                        android:id="@+id/ncshangshiproblem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="存在问题" >
+                    </EditText>
+                     <ImageView
+                    android:id="@+id/ncshang_getImage"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/user_icon_tupian2" />
+                      <ImageView
+                    android:id="@+id/ncshang_getvideo"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/user_icon_shipin2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" 
+                    android:layout_marginBottom="5dp"
+                    >
+
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="0dp"
+                        android:text="3.产品包装标识是否规范" >
+                    </TextView>
+
+                    <RadioGroup
+                        android:id="@+id/ncguifanresult"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="性别"
+                        android:orientation="horizontal" >
+
+                        <RadioButton
+                            android:id="@+id/ncguifanradiofinish"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="是" >
+                        </RadioButton>
+
+                        <RadioButton
+                            android:id="@+id/ncguifanradiounfinish"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="否" >
+                        </RadioButton>
+                    </RadioGroup>
+
+                    <EditText
+                        android:id="@+id/ncguifanproblem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="存在问题" >
+                    </EditText>
+                     <ImageView
+                    android:id="@+id/ncgui_getImage"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/user_icon_tupian2" />
+                      <ImageView
+                    android:id="@+id/ncgui_getvideo"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/user_icon_shipin2" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" 
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="七、质量安全"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/nczlproblem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="八、填写日期"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1.受检单位负责人填写日期：" />
+
+                    <EditText
+                        android:id="@+id/ncfuzerenyear"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="年" />
+
+                    <EditText
+                        android:id="@+id/ncfuzerenmonth"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="月" />
+
+                    <EditText
+                        android:id="@+id/ncfuzerenday"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="日" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2.巡查组组长填写日期：" />
+
+                    <EditText
+                        android:id="@+id/nczuzhangyear"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="年" />
+
+                    <EditText
+                        android:id="@+id/nczuzhangmonth"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="月" />
+
+                    <EditText
+                        android:id="@+id/nczuzhangday"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="日" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/title"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textinput"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="50dp"
+                android:orientation="horizontal" >
+
+                <!-- <Button -->
+                <!-- android:id="@+id/btnposition" -->
+                <!-- android:layout_width="wrap_content" -->
+                <!-- android:layout_height="wrap_content" -->
+                <!-- android:text="位置" /> -->
+
+
+                <!-- <Button -->
+                <!-- android:id="@+id/delftrecord" -->
+                <!-- android:layout_width="wrap_content" -->
+                <!-- android:layout_height="wrap_content" -->
+                <!-- android:text="删除" /> -->
+
+                <Button
+                    android:id="@+id/btnzp"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/user_icon_tupian" />
+
+                <Button
+                    android:id="@+id/btnsp"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/user_icon_shipin" />
+
+                <Button
+                    android:id="@+id/btnsy"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/user_icon_shengyin" />
+
+                <Button
+                    android:id="@+id/save"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/shap_savebt"
+                    android:text="保      存"
+                    android:textColor="#5AC75A" />
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/user_icon_tupian2" />
+
+                <ImageView
+                    android:id="@+id/imageviewvideo"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/user_icon_shipin2" />
+
+                <ImageView
+                    android:id="@+id/imageviewsound"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/user_icon_shengyin2" />
+            </LinearLayout>
+
+<!--             <LinearLayout -->
+<!--                 android:layout_width="wrap_content" -->
+<!--                 android:layout_height="wrap_content" -->
+<!--                 android:orientation="vertical" > -->
+
+<!--                 <ImageView -->
+<!--                     android:id="@+id/imageviewsound" -->
+<!--                     android:layout_width="55dp" -->
+<!--                     android:layout_height="55dp" -->
+<!--                     android:layout_marginLeft="10dp" -->
+<!--                     android:adjustViewBounds="true" -->
+<!--                     android:src="@drawable/user_icon_shengyin2" /> -->
+<!--             </LinearLayout> -->
+
+            <!-- <LinearLayout -->
+            <!-- android:layout_width="fill_parent" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_gravity="center_horizontal" > -->
+
+
+            <!-- <TextView -->
+            <!-- android:id="@+id/nctxtsaddressdes" -->
+            <!-- android:layout_width="300dp" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:gravity="left" -->
+            <!-- android:text="" > -->
+            <!-- </TextView> -->
+
+
+            <!-- <com.baidu.mapapi.map.MapView -->
+            <!-- android:id="@+id/id_bmapView" -->
+            <!-- android:layout_width="400dp" -->
+            <!-- android:layout_height="200dp" -->
+            <!-- android:layout_gravity="center_horizontal" -->
+            <!-- android:clickable="true" /> -->
+            <!-- </LinearLayout> -->
+        </LinearLayout>
+    </RelativeLayout>
+
+</ScrollView>

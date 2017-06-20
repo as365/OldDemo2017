@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" 
+    android:descendantFocusability="blocksDescendants"
+    >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/task_item_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="asdasddasdas"
+            android:layout_marginTop="5dp"
+			android:layout_marginLeft="10dp"            
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/task_item_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/task_item_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:text="asdasddasdas"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/task_item_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+              android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:text="asdasddasdas"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/task_item_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:text="删除" 
+        android:focusable="false"
+        />
+
+</RelativeLayout>

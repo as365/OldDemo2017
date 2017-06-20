@@ -1,0 +1,529 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:scrollbars="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin" >
+
+        <LinearLayout
+            android:id="@+id/textinput"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="一、基本情况"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1." />
+
+                    <TextView
+                        android:id="@+id/textViewddate"
+                        android:layout_width="120sp"
+                        android:layout_height="wrap_content"
+                        android:text="检查单位:" >
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/jc_checkcompanyname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10" >
+                    </EditText>
+
+                    <TextView
+                        android:id="@+id/textViewddate1"
+                        android:layout_width="120sp"
+                        android:layout_height="wrap_content"
+                        android:text="电话:" >
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/jc_checkphone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10" >
+                    </EditText>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2." />
+
+                    <TextView
+                        android:id="@+id/textViewddate3"
+                        android:layout_width="120sp"
+                        android:layout_height="wrap_content"
+                        android:text="检察人员[组长]：" >
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/jc_zuzhang"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10" >
+                    </EditText>
+
+                    <TextView
+                        android:layout_width="120sp"
+                        android:layout_height="wrap_content"
+                        android:text="随同人员：" >
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/jc_suitong"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10" >
+                    </EditText>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3." />
+
+                    <TextView
+                        android:layout_width="120sp"
+                        android:layout_height="wrap_content"
+                        android:text="受检单位：" >
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/jc_shoujian"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10" >
+                    </EditText>
+
+                    <TextView
+                        android:layout_width="120sp"
+                        android:layout_height="wrap_content"
+                        android:text="电话：" >
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/jc_shoujianphone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10" >
+                    </EditText>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4." />
+
+                    <TextView
+                        android:layout_width="120sp"
+                        android:layout_height="wrap_content"
+                        android:text="法定代表人：" >
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/jc_fading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10" >
+                    </EditText>
+
+                    <TextView
+                        android:layout_width="120sp"
+                        android:layout_height="wrap_content"
+                        android:text="检查产品：" >
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/jc_checkproduct"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10" >
+                    </EditText>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5." />
+
+                    <TextView
+                        android:id="@+id/textViewddate2"
+                        android:layout_width="120sp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="0dp"
+                        android:text="地    址：" >
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/jc_txtsaddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10" >
+                    </EditText>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="二、存在问题(参照无公害农产品综合检查获证单位评价表项目内容填写)："
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/jc_problem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10" >
+                </EditText>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="三、整改内容："
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/jc_zhenggeicon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10" >
+                </EditText>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <!-- <TextView -->
+                    <!-- android:layout_width="wrap_content" -->
+                    <!-- android:layout_height="wrap_content" -->
+                    <!-- android:text="检查组长(签字)：" > -->
+                    <!-- </TextView> -->
+
+
+                    <!-- <EditText -->
+                    <!-- android:id="@+id/jc_zuchangqianzi" -->
+                    <!-- android:layout_width="wrap_content" -->
+                    <!-- android:layout_height="wrap_content" -->
+                    <!-- android:layout_weight="1" -->
+                    <!-- android:ems="10" > -->
+                    <!-- </EditText> -->
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="日期：" >
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/jc_zhenggaidate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10" >
+                    </EditText>
+
+                    <Button
+                        android:id="@+id/jc_zgSetDate"
+                        android:layout_width="47dp"
+                        android:layout_height="34dp"
+                        android:layout_x="266dp"
+                        android:layout_y="238dp"
+                        android:text="+"
+                        android:textColor="#fff" >
+
+                        <requestFocus />
+                    </Button>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="四、被检单位意见："
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/jc_beijiancon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10" >
+                </EditText>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <!-- <TextView -->
+                <!-- android:layout_width="wrap_content" -->
+                <!-- android:layout_height="wrap_content" -->
+                <!-- android:text="负责人(签字)：" > -->
+                <!-- </TextView> -->
+
+
+                <!-- <EditText -->
+                <!-- android:id="@+id/jc_fuzeqianzi" -->
+                <!-- android:layout_width="wrap_content" -->
+                <!-- android:layout_height="wrap_content" -->
+                <!-- android:layout_weight="1" -->
+                <!-- android:ems="10" > -->
+                <!-- </EditText> -->
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="日期：" >
+                </TextView>
+
+                <EditText
+                    android:id="@+id/jc_beijiandate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10" >
+                </EditText>
+
+                <Button
+                    android:id="@+id/jc_fzSetDate"
+                    android:layout_width="47dp"
+                    android:layout_height="34dp"
+                    android:layout_x="266dp"
+                    android:layout_y="238dp"
+                    android:text="+"
+                    android:textColor="#fff" >
+
+                    <requestFocus />
+                </Button>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="五、复核意见："
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/jc_fuhecon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10" >
+                </EditText>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <!-- <TextView -->
+                    <!-- android:layout_width="wrap_content" -->
+                    <!-- android:layout_height="wrap_content" -->
+                    <!-- android:text="省级工作机构(签字)：" > -->
+                    <!-- </TextView> -->
+
+
+                    <!-- <EditText -->
+                    <!-- android:id="@+id/jc_shengjiqianzi" -->
+                    <!-- android:layout_width="wrap_content" -->
+                    <!-- android:layout_height="wrap_content" -->
+                    <!-- android:layout_weight="1" -->
+                    <!-- android:ems="10" > -->
+                    <!-- </EditText> -->
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="日期：" >
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/jc_shengjidate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10" >
+                    </EditText>
+
+                    <Button
+                        android:id="@+id/jc_sjSetDate"
+                        android:layout_width="47dp"
+                        android:layout_height="34dp"
+                        android:layout_x="266dp"
+                        android:layout_y="238dp"
+                        android:text="+"
+                        android:textColor="#fff" >
+
+                        <requestFocus />
+                    </Button>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/title"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textinput"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/save"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="保存" />
+
+                <Button
+                    android:id="@+id/btnzp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="照片" />
+
+                <Button
+                    android:id="@+id/btnsp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="视频" />
+
+                <Button
+                    android:id="@+id/btnsy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="声音" />
+
+                <Button
+                    android:id="@+id/btnposition"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="位置" />
+
+                <Button
+                    android:id="@+id/delftrecord"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="删除" />
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/photo" />
+
+                <ImageView
+                    android:id="@+id/imageviewsound"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/sound" />
+
+                <ImageView
+                    android:id="@+id/imageviewvideo"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/video" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal" >
+
+                <TextView
+                    android:id="@+id/jc_txtsaddressdes"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="" >
+                </TextView>
+
+                <com.baidu.mapapi.map.MapView
+                    android:id="@+id/id_bmapView"
+                    android:layout_width="400dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center_horizontal"
+                    android:clickable="true" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</ScrollView>
