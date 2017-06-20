@@ -1,61 +1,45 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context="com.uidemo.MainActivity">
-    <FrameLayout
-        android:id="@+id/f"
-        android:layout_width="0dp"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:progres="http://schemas.android.com/apk/res-auto">
+
+    <com.views.ProgressToggleButton
+        android:id="@+id/user_div"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentRight="true"
+        android:layout_margin="10dp"
+        android:background="@color/colorPrimaryDark"
+        progres:main_color="#FAA532"
+        progres:progress_current_width="5dp"
+        progres:progress_total_width="2dp"
+        tools:ignore="RtlHardcoded" />
+
+    <com.views.ProgressToggleButton
+        android:id="@+id/defult"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="10dp"
+        android:background="@color/colorPrimaryDark"
+        tools:ignore="RtlHardcoded" />
+
+    <com.views.ProgressToggleButton
+        android:id="@+id/play"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:background="@color/colorPrimaryDark"
+        tools:ignore="RtlHardcoded" />
+
+    <SeekBar
+        android:id="@+id/seekbar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent">
-        <RadioGroup
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        android:layout_above="@+id/play"
+        android:max="100"
+        android:progress="0" />
 
-            <RadioButton
-                android:id="@+id/message"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:button="@null"
-                android:drawableTop="@mipmap/wechat"
-                android:gravity="center_horizontal|bottom"
-                android:text="微信" />
-
-            <RadioButton
-                android:id="@+id/contact"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:button="@null"
-                android:drawableTop="@mipmap/contact"
-                android:gravity="center_horizontal|bottom"
-                android:text="通讯录" />
-
-            <RadioButton
-                android:id="@+id/circle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:button="@null"
-                android:drawableTop="@mipmap/find"
-                android:gravity="center_horizontal|bottom"
-                android:text="发现" />
-
-            <RadioButton
-                android:id="@+id/setting"
-                android:text="我"
-                android:gravity="center_horizontal|bottom"
-                android:button="@null"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:drawableTop="@mipmap/mine"
-                android:layout_height="wrap_content" />
-        </RadioGroup>
-    </FrameLayout>
-
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
