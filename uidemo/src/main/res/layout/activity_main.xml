@@ -8,7 +8,7 @@
         android:id="@+id/user_div"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
         android:layout_margin="10dp"
         android:background="@color/colorPrimaryDark"
         progres:main_color="#FAA532"
@@ -16,29 +16,11 @@
         progres:progress_total_width="2dp"
         tools:ignore="RtlHardcoded" />
 
-    <com.views.ProgressToggleButton
-        android:id="@+id/defult"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_margin="10dp"
-        android:background="@color/colorPrimaryDark"
-        tools:ignore="RtlHardcoded" />
-
-    <com.views.ProgressToggleButton
-        android:id="@+id/play"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"
-        android:background="@color/colorPrimaryDark"
-        tools:ignore="RtlHardcoded" />
-
     <SeekBar
         android:id="@+id/seekbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/play"
+        android:layout_below="@+id/user_div"
         android:max="100"
         android:progress="0" />
 

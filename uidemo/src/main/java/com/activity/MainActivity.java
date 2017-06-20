@@ -13,7 +13,7 @@ import com.views.ProgressToggleButton;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ProgressToggleButton tDefult, tDiv, tplayer;
+    private ProgressToggleButton tDiv;
 
     private MediaPlayer mMediaPlayer;
 
@@ -27,41 +27,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void init() {
-        tDefult = (ProgressToggleButton) findViewById(R.id.defult);
         tDiv = (ProgressToggleButton) findViewById(R.id.user_div);
-        tplayer = (ProgressToggleButton) findViewById(R.id.play);
         mSeekBar = (SeekBar) findViewById(R.id.seekbar);
         mMediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.chengdu);
         mMediaPlayer.start();
-        tDefult.setOnCheckChangesListener(new ProgressToggleButton.onCheckChangesListener() {
-
-            @Override
-            public void onchechkchanges(boolean isChecked) {
-                Toast.makeText(MainActivity.this, "默认样式被点击,状态为" + isChecked,
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
         tDiv.setOnCheckChangesListener(new ProgressToggleButton.onCheckChangesListener() {
 
             @Override
             public void onchechkchanges(boolean isChecked) {
                 Toast.makeText(MainActivity.this, "用户指定样式被点击,状态为" + isChecked,
                         Toast.LENGTH_SHORT).show();
-            }
-        });
-        tplayer.setOnCheckChangesListener(new ProgressToggleButton.onCheckChangesListener() {
-
-            @Override
-            public void onchechkchanges(boolean isChecked) {
-                if (musicAsyTask != null) {
-                    musicAsyTask.cancel(true);
-                }
-                musicAsyTask = (MusicAsyTask) new MusicAsyTask().execute();
-                if (isChecked) {
-                    mMediaPlayer.start();
-                } else {
-                    mMediaPlayer.pause();
-                }
             }
         });
         mSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -88,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 if (fromUser) {
                     Log.d("LOG", progress + "");
                     mMediaPlayer.seekTo((progress * mMediaPlayer.getDuration()) / 100);
-                    tplayer.setProgress(progress);
+                    tDiv.setProgress(progress);
                 }
 
             }
@@ -115,7 +90,6 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onProgressUpdate(Integer... values) {
             int progress = values[0];
-            tplayer.setProgress(progress);
             mSeekBar.setProgress(progress);
             super.onProgressUpdate(values);
         }
