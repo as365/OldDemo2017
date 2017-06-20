@@ -1,1 +1,1 @@
-include ':hotupdate', ':rxdemo', ':mvpdemo', ':quickcode', ':okhttpdemo', ':retrofitdemo', ':butterknife', ':uidemo', ':xiaomipush'
+include ':hotupdate', ':rxdemo', ':mvpdemo', ':quickcode', ':okhttpdemo', ':retrofitdemo', ':butterknife', ':uidemo', ':xiaomipush', ':music'
