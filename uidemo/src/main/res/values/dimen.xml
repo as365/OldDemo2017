@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="progress_total_width">20dp</dimen>
+    <dimen name="progress_current_width">15dp</dimen>
+    <dimen name="weidght_size">100dp</dimen>
+</resources>
