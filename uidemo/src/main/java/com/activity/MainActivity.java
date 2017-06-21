@@ -3,6 +3,7 @@ package com.activity;
 import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.SeekBar;
@@ -18,6 +19,29 @@ public class MainActivity extends AppCompatActivity {
     private MediaPlayer mMediaPlayer;
 
     private SeekBar mSeekBar;
+    public Handler handler = new Handler();
+    public Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            mSeekBar.setProgress(mMediaPlayer.getCurrentPosition());
+            mSeekBar.setMax(mMediaPlayer.getDuration());
+            int progress = getProgress(mMediaPlayer.getCurrentPosition(),mMediaPlayer.getDuration());
+            tDiv.setProgress(progress);
+            handler.postDelayed(runnable, 200);
+        }
+    };
+
+    /**
+     * 获取进度
+     * @param currentPosition
+     * @param duration
+     * @return
+     */
+    private int getProgress(int currentPosition, int duration) {
+        double progress = ((double) currentPosition / (double) duration);
+        int result= (int) (progress*100);
+        return result;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         mSeekBar = (SeekBar) findViewById(R.id.seekbar);
         mMediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.chengdu);
         mMediaPlayer.start();
+        handler.post(runnable);
         tDiv.setOnCheckChangesListener(new ProgressToggleButton.onCheckChangesListener() {
 
             @Override
