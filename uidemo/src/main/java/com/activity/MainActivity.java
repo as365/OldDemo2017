@@ -68,18 +68,12 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                musicAsyTask = (MusicAsyTask) new MusicAsyTask().execute();
-                Log.d("LOG", "finish");
 
             }
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-                if (musicAsyTask != null) {
-                    musicAsyTask.cancel(true);
-                    musicAsyTask = null;
-                    Log.d("LOG", "starttoch");
-                }
+
             }
 
             @Override
@@ -95,45 +89,4 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private MusicAsyTask musicAsyTask;
-
-    public class MusicAsyTask extends AsyncTask<Void, Integer, Void> {
-
-        @Override
-        protected Void doInBackground(Void... params) {
-            publishProgress(getPercent(mMediaPlayer.getCurrentPosition(),
-                    mMediaPlayer.getDuration()));
-            try {
-                Thread.sleep(1000);
-                this.doInBackground();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            return null;
-        }
-
-        @Override
-        protected void onProgressUpdate(Integer... values) {
-            int progress = values[0];
-            mSeekBar.setProgress(progress);
-            super.onProgressUpdate(values);
-        }
-
-    }
-
-    /**
-     * 计算百分比
-     *
-     * @param progress
-     *            当前进度
-     * @param total
-     *            总进度
-     * @return
-     */
-    public int getPercent(int progress, int total) {
-        double baiy = progress * 1.0;
-        double baiz = total * 1.0;
-        double fen = baiy / baiz;
-        return (int) (fen * 100);
-    }
 }

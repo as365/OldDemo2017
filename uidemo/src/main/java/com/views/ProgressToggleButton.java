@@ -29,7 +29,7 @@ public class ProgressToggleButton extends ToggleButton {
         this.listener = l;
     }
     private int mainColor;//主体颜色
-    private int circleTotalWidth, circleCurrentWidth;//总进度和当前进度的宽度
+    private int circleTotalWidth, circleCurrentWidth;//外部圆环的宽度和进度条的宽度
     private Paint mPaint = new Paint();
     private int mProgress = 1;// 当前进度
     public ProgressToggleButton(Context context, AttributeSet attrs) {
@@ -60,7 +60,7 @@ public class ProgressToggleButton extends ToggleButton {
         } else {
             drawStop(canvas, center, sideLength);//绘制正三角形
         }
-        // 最外围的总进度
+        // 最外围圆环的总宽度
         mPaint.setStrokeWidth(circleTotalWidth);
         mPaint.setStyle(Paint.Style.STROKE);
         int radius = center - circleTotalWidth;
@@ -137,7 +137,7 @@ public class ProgressToggleButton extends ToggleButton {
         return (int) (mProgress / 3.6);
     }
 
-    // 设置为wrap_content 时的控件高宽
+    // 设置为wrap_content 时的控件默认高宽（由于是一个圆，所以高和宽一样）
     private int defultWidth = (int) getResources().getDimension(
             R.dimen.weidght_size);
 
