@@ -21,6 +21,6 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void doLogic() {
-        showProgressDialog(this);
+        showToast("你好");
     }
 }

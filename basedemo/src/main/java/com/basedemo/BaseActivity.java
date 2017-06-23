@@ -4,8 +4,10 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Toast;
 
 /**
@@ -61,6 +63,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         startActivityForResult(intent, requestCode);
     }
 
+    /**
+     * 显示
+     * @param msg
+     */
     protected void showToast(String msg) {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
@@ -91,37 +97,18 @@ public abstract class BaseActivity extends AppCompatActivity {
 
 
     /**
-     * 设置进度条对话框
-     * @param context
+     * 设置网络连接失败对话框
      */
-    public void showProgressDialog(Context context,String title) {
-        final int MAX_PROGRESS = 100;
+    public void showNetWorkFailDialog(View view) {
         final ProgressDialog progressDialog =
-                new ProgressDialog(context);
-        progressDialog.setProgress(0);
-        progressDialog.setTitle(title);
-        progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-        progressDialog.setMax(MAX_PROGRESS);
+                new ProgressDialog(BaseActivity.this);
+        if(view==null){
+            progressDialog.setTitle("网络连接不可用!");
+            progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        }else {
+            progressDialog.setCustomTitle(view);
+        }
         progressDialog.show();
-    /* 模拟进度增加的过程
-     * 新开一个线程，每个100ms，进度增加1
-     */
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                int progress= 0;
-                while (progress < MAX_PROGRESS){
-                    try {
-                        Thread.sleep(100);
-                        progress++;
-                        progressDialog.setProgress(progress);
-                    } catch (InterruptedException e){
-                        e.printStackTrace();
-                    }
-                }
-                // 进度达到最大值后，窗口消失
-                progressDialog.cancel();
-            }
-        }).start();
     }
+
 }
