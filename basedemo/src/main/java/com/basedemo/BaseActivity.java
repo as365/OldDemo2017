@@ -1,17 +1,11 @@
 package com.basedemo;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.pm.ActivityInfo;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ListAdapter;
-import android.widget.ListView;
 import android.widget.Toast;
 
 /**
@@ -19,35 +13,29 @@ import android.widget.Toast;
  */
 
 public abstract class BaseActivity extends AppCompatActivity {
-    /**
-     * 是否允许旋转屏幕
-     **/
-    private boolean isAllowScreenRoate = false;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        if (!isAllowScreenRoate) {
-            //要求屏幕方向是竖屏
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        }
-
-        setScreenRoate(false);
-        bindView();
+        setContentView(bindView());
         initView();
+        doLogic();
     }
 
-    public abstract void bindView();
 
-    public abstract void initView();
+    public abstract int bindView();//绑定一个View
+
+    public abstract void initView();//初始化所有的View
+    public abstract void setListener();//设置监听
+
+    public abstract void doLogic();//做逻辑操作
 
     /**
      * [页面跳转]不携带数据
      *
      * @param clz
      */
-    public void startActivity(Class<?> clz) {
+    public void startMyAc(Class<?> clz) {
         startActivity(new Intent(BaseActivity.this, clz));
     }
 
@@ -57,7 +45,7 @@ public abstract class BaseActivity extends AppCompatActivity {
      * @param clz
      * @param intent 携带参数
      */
-    public void startActivity(Class<?> clz, Intent intent) {
+    public void startMyAc(Class<?> clz, Intent intent) {
         intent.setClass(this, clz);
         startActivity(intent);
     }
@@ -68,39 +56,23 @@ public abstract class BaseActivity extends AppCompatActivity {
      * @param intent
      * @param requestCode
      */
-    public void startActivity(Class<?> clz, Intent intent, int requestCode) {
+    public void startMyAc(Class<?> clz, Intent intent, int requestCode) {
         intent.setClass(this, clz);
         startActivityForResult(intent, requestCode);
     }
 
-    /**
-     * [简化Toast]
-     *
-     * @param msg
-     */
     protected void showToast(String msg) {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 
     /**
-     * [是否允许屏幕旋转]
-     *
-     * @param isAllowScreenRoate
-     */
-    public void setScreenRoate(boolean isAllowScreenRoate) {
-        this.isAllowScreenRoate = isAllowScreenRoate;
-    }
-
-
-    /**
-     * 简单Dialog
-     *
+     * 普通Dialog
      * @param title 标题
      * @param message 内容
      * @param positive 右
      * @param negative 左
      */
-    public void showSimpleDialog(String title, String message, String positive, String negative) {
+    public void showNormalDialog(String title, String message, String positive, String negative) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         if (title.length() > 0) {
             builder.setTitle(title);
@@ -115,5 +87,41 @@ public abstract class BaseActivity extends AppCompatActivity {
             builder.setNegativeButton(negative, null);
         }
         builder.create().show();
+    }
+
+
+    /**
+     * 设置进度条对话框
+     * @param context
+     */
+    public void showProgressDialog(Context context,String title) {
+        final int MAX_PROGRESS = 100;
+        final ProgressDialog progressDialog =
+                new ProgressDialog(context);
+        progressDialog.setProgress(0);
+        progressDialog.setTitle(title);
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+        progressDialog.setMax(MAX_PROGRESS);
+        progressDialog.show();
+    /* 模拟进度增加的过程
+     * 新开一个线程，每个100ms，进度增加1
+     */
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                int progress= 0;
+                while (progress < MAX_PROGRESS){
+                    try {
+                        Thread.sleep(100);
+                        progress++;
+                        progressDialog.setProgress(progress);
+                    } catch (InterruptedException e){
+                        e.printStackTrace();
+                    }
+                }
+                // 进度达到最大值后，窗口消失
+                progressDialog.cancel();
+            }
+        }).start();
     }
 }
