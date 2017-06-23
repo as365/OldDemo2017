@@ -252,12 +252,12 @@
         "source": "E:\\workspace\\Demo\\zfxc_wbx\\src\\main\\res\\drawable-hdpi\\user_icon_shengyin2.png"
     },
     {
-        "merged": "E:\\workspace\\Demo\\zfxc_wbx\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_btn_check_to_on_mtrl_015.png",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\f64dc1ca1c19fa4ba573b8cb09e7e3c9a0f58352\\output\\res\\drawable-hdpi\\abc_btn_check_to_on_mtrl_015.png"
-    },
-    {
         "merged": "E:\\workspace\\Demo\\zfxc_wbx\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_btn_switch_to_on_mtrl_00001.9.png",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\f64dc1ca1c19fa4ba573b8cb09e7e3c9a0f58352\\output\\res\\drawable-hdpi\\abc_btn_switch_to_on_mtrl_00001.9.png"
+    },
+    {
+        "merged": "E:\\workspace\\Demo\\zfxc_wbx\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\abc_btn_check_to_on_mtrl_015.png",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\f64dc1ca1c19fa4ba573b8cb09e7e3c9a0f58352\\output\\res\\drawable-hdpi\\abc_btn_check_to_on_mtrl_015.png"
     },
     {
         "merged": "E:\\workspace\\Demo\\zfxc_wbx\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\yellowtimepoint.png",

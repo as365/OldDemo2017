@@ -8,6 +8,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/basedemo" />
             <option value="$PROJECT_DIR$/butterknife" />
             <option value="$PROJECT_DIR$/hotupdate" />
             <option value="$PROJECT_DIR$/music" />
