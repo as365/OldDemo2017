@@ -1,2 +1,1 @@
-include ':hotupdate', ':rxdemo', ':mvpdemo', ':quickcode', ':okhttpdemo', ':retrofitdemo', ':butterknife', ':uidemo', ':xiaomipush', ':music', ':basedemo'
-include ':zfxc_wbx'
+include ':hotupdate', ':rxdemo', ':mvpdemo', ':quickcode', ':okhttpdemo', ':retrofitdemo', ':butterknife', ':uidemo', ':xiaomipush', ':music', ':basedemo', ':canadapter'

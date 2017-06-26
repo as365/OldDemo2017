@@ -20,7 +20,6 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
-    public void doLogic() {
-        showToast("你好");
+    public void doBusiness() {
     }
 }

@@ -1,10 +1,8 @@
 package com.basedemo;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -21,7 +19,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(bindView());
         initView();
-        doLogic();
+        doBusiness();
     }
 
 
@@ -30,7 +28,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     public abstract void initView();//初始化所有的View
     public abstract void setListener();//设置监听
 
-    public abstract void doLogic();//做逻辑操作
+    public abstract void doBusiness();//做逻辑操作
 
     /**
      * [页面跳转]不携带数据
