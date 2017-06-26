@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Demo.iml" filepath="$PROJECT_DIR$/Demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basedemo/basedemo.iml" filepath="$PROJECT_DIR$/basedemo/basedemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/butterknife/butterknife.iml" filepath="$PROJECT_DIR$/butterknife/butterknife.iml" />
+      <module fileurl="file://$PROJECT_DIR$/canadapter/canadapter.iml" filepath="$PROJECT_DIR$/canadapter/canadapter.iml" />
       <module fileurl="file://$PROJECT_DIR$/hotupdate/hotupdate.iml" filepath="$PROJECT_DIR$/hotupdate/hotupdate.iml" />
       <module fileurl="file://$PROJECT_DIR$/music/music.iml" filepath="$PROJECT_DIR$/music/music.iml" />
       <module fileurl="file://$PROJECT_DIR$/mvpdemo/mvpdemo.iml" filepath="$PROJECT_DIR$/mvpdemo/mvpdemo.iml" />
@@ -13,7 +15,6 @@
       <module fileurl="file://$PROJECT_DIR$/rxdemo/rxdemo.iml" filepath="$PROJECT_DIR$/rxdemo/rxdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/uidemo/uidemo.iml" filepath="$PROJECT_DIR$/uidemo/uidemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/xiaomipush/xiaomipush.iml" filepath="$PROJECT_DIR$/xiaomipush/xiaomipush.iml" />
-      <module fileurl="file://$PROJECT_DIR$/zfxc_wbx/zfxc_wbx.iml" filepath="$PROJECT_DIR$/zfxc_wbx/zfxc_wbx.iml" />
     </modules>
   </component>
 </project>
