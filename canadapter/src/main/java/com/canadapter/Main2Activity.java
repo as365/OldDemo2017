@@ -6,15 +6,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.canadapter.empty.EmptyAdapter;
-import com.canadapter.mulitem.Left;
-import com.canadapter.mulitem.MyAdapter;
-import com.canadapter.mulitem.Right;
 import com.zhy.adapter.recyclerview.wrapper.EmptyWrapper;
-
 import java.util.ArrayList;
 import java.util.List;
 
-import static android.R.id.list;
 
 public class Main2Activity extends AppCompatActivity {
     private List<String> list = new ArrayList<>();
