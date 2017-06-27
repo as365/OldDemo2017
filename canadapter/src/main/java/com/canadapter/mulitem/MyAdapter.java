@@ -1,10 +1,8 @@
-package com.canadapter;
+package com.canadapter.mulitem;
 
 import android.content.Context;
 
-import com.zhy.adapter.recyclerview.CommonAdapter;
 import com.zhy.adapter.recyclerview.MultiItemTypeAdapter;
-import com.zhy.adapter.recyclerview.base.ViewHolder;
 
 import java.util.List;
 

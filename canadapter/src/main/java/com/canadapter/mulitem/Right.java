@@ -1,4 +1,4 @@
-package com.canadapter.item;
+package com.canadapter.mulitem;
 
 import com.canadapter.R;
 import com.zhy.adapter.recyclerview.base.ItemViewDelegate;

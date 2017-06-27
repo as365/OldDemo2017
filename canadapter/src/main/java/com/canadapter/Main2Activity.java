@@ -1,38 +1,43 @@
 package com.canadapter;
 
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.canadapter.empty.EmptyAdapter;
 import com.canadapter.mulitem.Left;
 import com.canadapter.mulitem.MyAdapter;
 import com.canadapter.mulitem.Right;
+import com.zhy.adapter.recyclerview.wrapper.EmptyWrapper;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+import static android.R.id.list;
+
+public class Main2Activity extends AppCompatActivity {
     private List<String> list = new ArrayList<>();
-    private MyAdapter myAdapter;
+    private EmptyAdapter myAdapter;
     private RecyclerView recyclerView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main2);
+        list = initData();
         recyclerView = (RecyclerView) findViewById(R.id.rc);
         list=initData();//初始化数据
-        myAdapter = new MyAdapter(this,list);
+        myAdapter = new EmptyAdapter(this,R.layout.item_left,list);
+        EmptyWrapper<String> emptyWrapper = new EmptyWrapper<>(myAdapter);
+        emptyWrapper.setEmptyView(R.layout.empty);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        myAdapter.addItemViewDelegate(new Left());
-        myAdapter.addItemViewDelegate(new Right());
-        recyclerView.setAdapter(myAdapter);
+        recyclerView.setAdapter(emptyWrapper);
     }
 
     private List<String> initData() {
-        for(int i=0;i<20;i++){
+        /*for(int i=0;i<20;i++){
             list.add("第" + i + "个数据");
-        }
+        }*/
         return list;
     }
 }
