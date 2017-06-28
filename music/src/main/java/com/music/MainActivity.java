@@ -8,7 +8,6 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.view.menu.MenuAdapter;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -24,13 +23,13 @@ public class MainActivity extends AppCompatActivity {
     private TextView musicStatus, musicTime, musicTotal;
     private SeekBar seekBar;
 
-    private Button btnPlayOrPause, btnStop, btnQuit;
+    private Button btnPlayOrPause, btnQuit;
     private SimpleDateFormat time = new SimpleDateFormat("mm:ss");
 
     private boolean tag1 = false;
     private boolean tag2 = false;
     private MusicService musicService;
-
+    public static final String MUSIC_URL ="http://liangchaojie.oss-cn-hangzhou.aliyuncs.com/chengdu.mp3" ;
     //  在Activity中调用 bindService 保持与 Service 的通信
     private void bindServiceConnection() {
         Intent intent = new Intent(MainActivity.this, MusicService.class);
@@ -42,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     private ServiceConnection serviceConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
-            musicService = ((MusicService.MyBinder) (service)).getService();
+            musicService = ((MusicService.MyBinder) (service)).getService(MUSIC_URL);
             Log.i("musicService", musicService + "");
             musicTotal.setText(time.format(musicService.mediaPlayer.getDuration()));
         }
@@ -71,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
         musicTotal = (TextView) findViewById(R.id.MusicTotal);
         seekBar = (SeekBar) findViewById(R.id.MusicSeekBar);
         btnPlayOrPause = (Button) findViewById(R.id.BtnPlayorPause);
-        btnStop = (Button) findViewById(R.id.BtnStop);
         btnQuit = (Button) findViewById(R.id.BtnQuit);
         musicStatus = (TextView) findViewById(R.id.MusicStatus);
     }
@@ -120,9 +118,8 @@ public class MainActivity extends AppCompatActivity {
                 }
                 //  由tag的变换来控制事件的调用
                 if (musicService.tag != true) {
-                    btnPlayOrPause.setText("PAUSE");
                     musicStatus.setText("Playing");
-                    musicService.playOrPause();
+                    musicService.playOrPause(btnPlayOrPause);
                     musicService.tag = true;
 
                     if (tag1 == false) {
@@ -132,9 +129,8 @@ public class MainActivity extends AppCompatActivity {
                         animator.resume();
                     }
                 } else {
-                    btnPlayOrPause.setText("PLAY");
                     musicStatus.setText("Paused");
-                    musicService.playOrPause();
+                    musicService.playOrPause(btnPlayOrPause);
                     animator.pause();
                     musicService.tag = false;
                 }
@@ -144,18 +140,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
-        btnStop.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                musicStatus.setText("Stopped");
-                btnPlayOrPause.setText("PLAY");
-                musicService.stop();
-                animator.start();
-                musicService.tag = false;
-            }
-        });
-
         //  停止服务时，必须解除绑定，写入btnQuit按钮中
         btnQuit.setOnClickListener(new View.OnClickListener() {
             @Override

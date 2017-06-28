@@ -67,26 +67,15 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="15dp"
             android:background="@drawable/shape"
-            android:text="PLAY"
+            android:text="播放"
             android:textAllCaps="false"
             android:textColor="@color/colorWhite" />
-
-        <Button
-            android:id="@+id/BtnStop"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/shape"
-            android:layout_marginRight="15dp"
-            android:text="RePlay"
-            android:textAllCaps="false"
-            android:textColor="@color/colorWhite" />
-
         <Button
             android:id="@+id/BtnQuit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/shape"
-            android:text="QUIT"
+            android:text="退出"
             android:textAllCaps="false"
             android:textColor="@color/colorWhite" />
     </LinearLayout>
