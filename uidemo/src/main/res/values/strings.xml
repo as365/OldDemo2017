@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">UIDemo</string>
+    <string name="app_agree_content">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Please note that the use of this app without the consent of others to record phone calls between you and others in certain areas or countries may be prohibited by law. You must be responsible to comply with local laws when using this app. By using this app, you agree that REC-CALL should not in any circumstances responsible for any of your violation of any local, national or international legal action.</string>
 </resources>
