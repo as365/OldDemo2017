@@ -8,6 +8,8 @@ import android.text.TextPaint;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
+import static android.R.attr.width;
+
 public class JustifyTextView extends TextView {
 
     private int mLineY;
@@ -59,7 +61,7 @@ public class JustifyTextView extends TextView {
             line = line.substring(3);
         }
 
-        float d = (mViewWidth - lineWidth) / line.length() - 1;
+        float d = (mViewWidth - lineWidth) / (line.length() - 1);
         for (int i = 0; i < line.length(); i++) {
             String c = String.valueOf(line.charAt(i));
             float cw = StaticLayout.getDesiredWidth(c, getPaint());
