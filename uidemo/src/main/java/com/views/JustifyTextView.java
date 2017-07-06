@@ -38,8 +38,8 @@ public class JustifyTextView extends TextView {
             String line = text.substring(lineStart, lineEnd);
 
             float width = StaticLayout.getDesiredWidth(text, lineStart, lineEnd, getPaint());
-            if (needScale(line) && i < layout.getLineCount() -1) {
-                drawScaledText(canvas, lineStart, line, width);
+            if (needScale(line) && i < layout.getLineCount()-1 ) {
+                drawScaledText(canvas,line, width);
             } else {
                 canvas.drawText(line, 0, mLineY, paint);
             }
@@ -48,9 +48,9 @@ public class JustifyTextView extends TextView {
         }
     }
 
-    private void drawScaledText(Canvas canvas, int lineStart, String line, float lineWidth) {
+    private void drawScaledText(Canvas canvas,String line, float lineWidth) {
         float x = 0;
-        if (isFirstLineOfParagraph(lineStart, line)) {
+        if (isFirstLineOfParagraph(line)) {
             String blanks = "  ";
             canvas.drawText(blanks, x, mLineY, getPaint());
             float bw = StaticLayout.getDesiredWidth(blanks, getPaint());
@@ -68,7 +68,7 @@ public class JustifyTextView extends TextView {
         }
     }
 
-    private boolean isFirstLineOfParagraph(int lineStart, String line) {
+    private boolean isFirstLineOfParagraph(String line) {
         return line.length() > 3 && line.charAt(0) == ' ' && line.charAt(1) == ' ';
     }
 
