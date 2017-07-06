@@ -27,8 +27,6 @@ public class JustifyTextView extends TextView {
     @Override
     protected void onDraw(Canvas canvas) {
         TextPaint paint = getPaint();
-        paint.setColor(getCurrentTextColor());
-        paint.drawableState = getDrawableState();
         mViewWidth = getMeasuredWidth();
         String text = (String) getText();
         mLineY = 0;
