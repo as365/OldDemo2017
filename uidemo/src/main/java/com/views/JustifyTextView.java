@@ -6,6 +6,7 @@ import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.util.AttributeSet;
+import android.view.ViewTreeObserver;
 import android.widget.TextView;
 
 import static android.R.attr.width;
@@ -17,11 +18,6 @@ public class JustifyTextView extends TextView {
 
     public JustifyTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
-    }
-
-    @Override
-    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
-        super.onLayout(changed, left, top, right, bottom);
     }
 
     @Override
@@ -59,12 +55,12 @@ public class JustifyTextView extends TextView {
             line = line.substring(3);
         }
 
-        float d = (mViewWidth - lineWidth) / (line.length() - 1);
+        float d = (mViewWidth-lineWidth) /line.length();
         for (int i = 0; i < line.length(); i++) {
             String c = String.valueOf(line.charAt(i));
             float cw = StaticLayout.getDesiredWidth(c, getPaint());
             canvas.drawText(c, x, mLineY, getPaint());
-            x += cw + d;
+            x += cw+d;
         }
     }
 
