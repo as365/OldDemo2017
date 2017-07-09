@@ -27,6 +27,7 @@ public class JustifyTextView extends TextView {
         for (int i = 0; i < layout.getLineCount(); i++) {
             mViewHeight += getLineHeight();
         }
+        mViewHeight = mViewHeight + getPaddingTop() + getPaddingBottom();
         setMeasuredDimension(mViewWidth,mViewHeight);
     }
 
