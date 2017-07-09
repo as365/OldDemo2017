@@ -46,7 +46,7 @@ public class JustifyTextView extends TextView {
 
             float width = StaticLayout.getDesiredWidth(text, lineStart, lineEnd, getPaint());
             if (needScale(line) && i < layout.getLineCount()-1 ) {
-                drawScaledText(canvas,line, width);
+                drawScaledText(canvas,line, width,i);
             } else {
                 canvas.drawText(line, 0, mLineY, paint);
             }
@@ -55,15 +55,14 @@ public class JustifyTextView extends TextView {
         }
     }
 
-    private void drawScaledText(Canvas canvas,String line, float lineWidth) {
+    private void drawScaledText(Canvas canvas,String line, float lineWidth,int index) {
         float x = 0;
-        if (isFirstLineOfParagraph(line)) {
-            String blanks = "  ";
+        if (isFirstLineOfParagraph(index)) {
+            String blanks = "        ";
             canvas.drawText(blanks, x, mLineY, getPaint());
             float bw = StaticLayout.getDesiredWidth(blanks, getPaint());
             x += bw;
-
-            line = line.substring(3);
+            lineWidth = lineWidth +bw;
         }
 
         float d = (mViewWidth-lineWidth) /line.length();
@@ -75,8 +74,8 @@ public class JustifyTextView extends TextView {
         }
     }
 
-    private boolean isFirstLineOfParagraph(String line) {
-        return line.length() > 3 && line.charAt(0) == ' ' && line.charAt(1) == ' ';
+    private boolean isFirstLineOfParagraph(int lineIndex) {
+        return lineIndex==0;
     }
 
     private boolean needScale(String line) {
