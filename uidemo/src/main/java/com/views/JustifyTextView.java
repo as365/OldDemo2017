@@ -6,18 +6,28 @@ import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.util.AttributeSet;
-import android.view.ViewTreeObserver;
 import android.widget.TextView;
-
-import static android.R.attr.width;
 
 public class JustifyTextView extends TextView {
 
     private int mLineY;
     private int mViewWidth;
+    private int mViewHeight;
 
     public JustifyTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
+    }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        Layout layout = getLayout();
+        mViewHeight =0;
+        mViewWidth = layout.getWidth()+getPaddingLeft()+getPaddingRight();
+        for (int i = 0; i < layout.getLineCount(); i++) {
+            mViewHeight += getLineHeight();
+        }
+        setMeasuredDimension(mViewWidth,mViewHeight);
     }
 
     @Override
