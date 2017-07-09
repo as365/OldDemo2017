@@ -11,15 +11,17 @@ import android.widget.TextView;
 /**
  * By Jie 2017.7.9
  *
+ *  Word排版文本View
+ *
  * 首行缩进，左右对齐TextView
  */
-public class JustifyTextView extends TextView {
+public class WordTextView extends TextView {
 
     private int mLineY;//y轴绘制的坐标
     private int mViewWidth;//view总宽度
     private int mViewHeight;//view总高度
 
-    public JustifyTextView(Context context, AttributeSet attrs) {
+    public WordTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
